@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/vkladCardView"
+
+        app:cardCornerRadius="6dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:background="@color/myWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/myWhite">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/vkladName"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Вклад Афигенный"
+                    android:textColor="@color/header2"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/bankName"
+
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Банк тоже афигенный"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+
+
+            <ImageView
+                android:id="@+id/bankImage"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/myWhite"
+                android:src="@drawable/sberbank_135x85" />
+
+        </LinearLayout>
+            <View
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/miuiLightGray" />
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Рубли"
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_weight="1"
+                    android:textColor="@color/header2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:text="Доллары"
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_weight="1"
+                    android:textColor="@color/header2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:text="Евро"
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_weight="1"
+                    android:textColor="@color/header2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:id="@+id/vkladRub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="до 8%"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:id="@+id/vkladDol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="до 8%"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="18dp" />
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:id="@+id/vkladEuro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="до 8%"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

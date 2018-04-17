@@ -1,0 +1,373 @@
+<FrameLayout
+    android:id="@+id/frameVklad"
+
+    android:background="@color/myWhite"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context="com.dimfcompany.bankapp.VkladFrag">
+
+    <ScrollView
+        android:id="@+id/vkladScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Максимальная ставка по вкладу :"
+                android:textAlignment="center"
+                android:textColor="@color/header2"
+                android:textSize="18dp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:id="@+id/procentTB"
+                    android:maxLength="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1.1"
+                    android:text="1.0"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="28dp" />
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/procentTB"
+                    android:layout_weight="1"
+                    android:text="%"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <com.warkiz.widget.IndicatorSeekBar
+                android:id="@+id/procentSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="8dp"
+                app:isb_max="100"
+                app:isb_min="0.1"
+                app:isb_progress="10"
+                app:isb_progress_value_float="true"
+                app:isb_seek_bar_type="continuous_texts_ends"
+                app:isb_show_indicator="false"
+                app:isb_text_color="@color/header2"
+                app:isb_text_left_end="0,01%"
+                app:isb_text_right_end="10.0%"
+                app:isb_thumb_color="@color/orange"
+                app:isb_track_background_bar_color="@color/myGray"
+                app:isb_track_progress_bar_color="@color/miuiOrange" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/header2" />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Максимальное расстояние до банка:"
+                android:textAlignment="center"
+                android:textColor="@color/header2"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/distTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="0.1"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/orange"
+                    android:textSize="28dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/distTV"
+                    android:layout_weight="1"
+                    android:text="км"
+                    android:textColor="@color/orange"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <!--com.warkiz.widget.IndicatorSeekBar
+
+
+                android:id="@+id/distSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="8dp"
+                app:isb_max="50"
+                app:isb_min="0.1"
+                app:isb_progress="1"
+                app:isb_progress_value_float="true"
+                app:isb_seek_bar_type="continuous_texts_ends"
+                app:isb_show_indicator="false"
+                app:isb_text_color="@color/header2"
+                app:isb_text_left_end="0.1км"
+                app:isb_text_right_end="50км"
+                app:isb_thumb_color="@color/orange"
+                app:isb_track_background_bar_color="@color/myGray"
+                app:isb_track_progress_bar_color="@color/orange" /-->
+
+            <View
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/header2" />
+
+            <Button
+                android:fontFamily="@font/sanfran_regular"
+
+                android:visibility="gone"
+                android:textSize="18dp"
+                android:textAllCaps="false"
+                android:id="@+id/moreInfoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_trans"
+                android:drawableEnd="@drawable/ic_keyboard_arrow_down_black_24dp"
+                android:paddingLeft="22dp"
+                android:paddingRight="16dp"
+                android:text="Дополнительные Параметры" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+
+
+                    android:id="@+id/ChBSnyatie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="8dp"
+                    android:button="@drawable/mycheckbox"
+                    android:layoutDirection="rtl"
+                    android:paddingLeft="20dp"
+                    android:text="Частичное снятие"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
+
+                <CheckBox
+
+                    android:id="@+id/ChBRastorj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="8dp"
+                    android:button="@drawable/mycheckbox"
+                    android:layoutDirection="rtl"
+                    android:paddingLeft="20dp"
+                    android:text="Льготное расторжение"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
+
+                <CheckBox
+
+                    android:id="@+id/ChBPopol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="8dp"
+                    android:button="@drawable/mycheckbox"
+                    android:layoutDirection="rtl"
+                    android:paddingLeft="20dp"
+                    android:text="Пополнение счета"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Валюты :"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="18dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="2dp">
+
+                    <Spinner
+                        android:id="@+id/mySpinner"
+                        style="@style/spinner_style_dark"></Spinner>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="24dp"
+                        android:src="@drawable/ic_keyboard_arrow_down_black_24dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:visibility="gone"
+                android:id="@+id/expandInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ael_duration="250"
+                app:ael_expanded="false"
+                app:ael_interpolator="accelerate"
+                app:ael_orientation="vertical">
+
+                <!--LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:fontFamily="@font/sanfran_regular"
+
+                        android:id="@+id/ChBSnyatie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@drawable/mycheckbox"
+                        android:layoutDirection="rtl"
+                        android:paddingLeft="20dp"
+                        android:text="Частичное снятие"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/header2"
+                        android:textSize="16dp" />
+
+                    <CheckBox
+                        android:fontFamily="@font/sanfran_regular"
+
+                        android:id="@+id/ChBRastorj"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@drawable/mycheckbox"
+                        android:layoutDirection="rtl"
+                        android:paddingLeft="20dp"
+                        android:text="Льготное расторжение"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/header2"
+                        android:textSize="16dp" />
+
+                    <CheckBox
+                        android:fontFamily="@font/sanfran_regular"
+
+                        android:id="@+id/ChBPopol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@drawable/mycheckbox"
+                        android:layoutDirection="rtl"
+                        android:paddingLeft="20dp"
+                        android:text="Пополнение счета"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/header2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:fontFamily="@font/sanfran_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Валюты :"
+                        android:textAlignment="center"
+                        android:textColor="@color/header2"
+                        android:textSize="18dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="2dp">
+
+                        <Spinner
+                            android:id="@+id/mySpinner"
+                            style="@style/spinner_style_dark"></Spinner>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="24dp"
+                            android:src="@drawable/ic_keyboard_arrow_down_black_24dp" />
+                    </RelativeLayout>
+                </LinearLayout-->
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+            <!--Button
+            android:id="@+id/getBanks"
+            android:textColor="@color/miuiOrange"
+            android:background="@drawable/button_orange"
+            android:text="Подобрать"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" /-->
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>
+

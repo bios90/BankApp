@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f7811d</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="background1">#f5f5f5</color>
+    <color name="header">#34495e</color>
+    <color name="header2">#212121</color>
+    <color name="headerBG">#1d2834</color>
+    <color name="headerBG2">#161616</color>
+    <color name="orange">#f7811d</color>
+    <color name="myWhite">#f6f6f6</color>
+    <color name="myGray">#a8a9ae</color>
+    <color name="miuiOrange">#ef6a0d</color>
+    <color name="miuiDarkGray">#2a292f</color>
+    <color name="miuiMiddleGray">#38373d</color>
+    <color name="miuiLightGray">#99999b</color>
+    <color name="miuiWhite">#ededef</color>
+
+</resources>

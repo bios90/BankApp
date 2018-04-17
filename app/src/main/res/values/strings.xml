@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">BankApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="valueSpinner">
+        <item name="allvalues">Любая</item>
+        <item name="rubles">Рубли</item>
+        <item name="dollar">Доллары</item>
+        <item name="euro">Евро</item>
+    </string-array>
+
+    <string-array name="srokRaboty">
+        <item name="neVajno">Не важен</item>
+        <item name="otTrido">От 3х месяцев</item>
+        <item name="otChetire">От 4ти месяцев</item>
+        <item name="otShest">От 6ти месяцев</item>
+        <item name="bezStaja">Без стажа</item>
+    </string-array>
+
+    <string-array name="help">
+        <item name="pomogite">Помощь  в выборе банка</item>
+        <item name="konsult">Консультация по продуктам</item>
+        <item name="other">Другие вопросы</item>
+    </string-array>
+
+    <string-array name="podtverjdenie">
+        <item name="all">Не важно</item>
+        <item name="bez">Без подтверждения дохода</item>
+        <item name="ndfl">Справки НДФЛ</item>
+        <item name="ndfl">Справки по форме банка</item>
+        <item name="other">Другие виды подтверждения</item>
+    </string-array>
+</resources>

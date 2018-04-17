@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        app:cardCornerRadius="6dp"
+
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/myWhite">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    android:id="@+id/bankName"
+
+                    android:gravity="center"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Сбербанк"
+                    android:textColor="@color/miuiDarkGray"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:id="@+id/bankImage"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/myWhite"
+                    android:src="@drawable/sberbank_135x85" />
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/miuiLightGray" />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/bankPhone"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:text="8 800 555-55-50"
+                    android:textColor="@color/miuiDarkGray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/bankSite"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:text="www.sberbank.ru"
+                    android:textColor="@color/orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--TextView
+                android:id="@+id/bankAdress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="г. Москва, ул. Вавилова, д. 19"
+                android:textColor="@color/miuiDarkGray"
+                 /-->
+
+            <View
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/miuiLightGray" />
+
+
+            <!--TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Вклады"
+                android:textAlignment="center"
+                android:textColor="@color/miuiDarkGray" /!-->
+
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Рубли"
+                    android:layout_weight="1"
+                    android:textColor="@color/miuiDarkGray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:text="Доллары"
+                    android:layout_weight="1"
+                    android:textColor="@color/miuiDarkGray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:text="Евро"
+                    android:layout_weight="1"
+                    android:textColor="@color/miuiDarkGray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/vkladRub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="до 8%"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/vkladDol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="до 8%"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="18dp" />
+                <TextView
+                    android:id="@+id/vkladEuro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="до 8%"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+
+            <!--LinearLayout
+                android:id="@+id/LL1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:text="Вклады"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiDarkGray" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:text="Кредиты"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiDarkGray" />
+
+            </LinearLayout-->
+
+            <!--LinearLayout
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="2dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/bankVklad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="от 4% до 9%"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="18dp" />
+
+                <TextView
+
+                    android:id="@+id/bankCredit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="от 20% до 28%"
+                    android:textAlignment="center"
+                    android:textColor="@color/miuiOrange"
+                    android:textSize="18dp" />
+
+            </LinearLayout!-->
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

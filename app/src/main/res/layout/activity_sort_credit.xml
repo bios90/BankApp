@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@drawable/dilogbackgroundwhite"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".SortDialogActvt">
+
+    <TextView
+        android:fontFamily="@font/museosanscyrl_700"
+        android:gravity="center"
+        android:background="@drawable/roundedheader"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        android:text="Сортировка"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/orange" />
+
+    <!--View
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/orange" /-->
+
+    <CheckBox
+        android:id="@+id/chPoStavkeCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="6dp"
+        android:button="@drawable/mycheckbox_orange"
+        android:layoutDirection="rtl"
+        android:paddingLeft="20dp"
+        android:text="По размеру ставки"
+        android:textAlignment="textStart"
+        android:textColor="@color/myWhite"
+        android:textSize="16dp" />
+
+
+
+    <CheckBox
+        android:id="@+id/chPoSymmeCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/mycheckbox_orange"
+        android:layoutDirection="rtl"
+        android:paddingLeft="20dp"
+        android:text="По максиальной сумме кредита"
+        android:textAlignment="textStart"
+        android:textColor="@color/myWhite"
+        android:textSize="16dp" />
+    <CheckBox
+        android:id="@+id/chPoSrokyCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/mycheckbox_orange"
+        android:layoutDirection="rtl"
+        android:paddingLeft="20dp"
+        android:text="По сроку кредита"
+        android:textAlignment="textStart"
+        android:textColor="@color/myWhite"
+        android:textSize="16dp" />
+
+    <CheckBox
+        android:id="@+id/chPoBankamCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/mycheckbox_orange"
+        android:layoutDirection="rtl"
+        android:paddingLeft="20dp"
+        android:text="По банкам"
+        android:textAlignment="textStart"
+        android:textColor="@color/myWhite"
+        android:textSize="16dp" />
+
+    <CheckBox
+        android:id="@+id/chPoNameCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/mycheckbox_orange"
+        android:layoutDirection="rtl"
+        android:paddingLeft="20dp"
+        android:text="По названию кредита"
+        android:textAlignment="textStart"
+        android:textColor="@color/myWhite"
+        android:textSize="16dp" />
+
+    <!--View
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/orange" /-->
+
+
+
+
+    <Button
+        android:id="@+id/buttShowCredit"
+
+        android:textAllCaps="false"
+        android:fontFamily="@font/museosanscyrl_700"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="16dp"
+        android:text="Показать"
+        android:textSize="20dp"
+        android:textColor="@color/header2"
+        android:background="@drawable/roundedorange"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+
+</LinearLayout>
+    <!--?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/dialogbackgrnd"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".SortDialogActvt">
+
+        <TextView
+            android:textSize="20dp"
+            android:layout_marginTop="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/myWhite"
+            android:text="Сортировка"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/orange" />
+
+        <CheckBox
+            android:id="@+id/chRub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="8dp"
+            android:button="@drawable/mycheckbox_orange"
+            android:layoutDirection="rtl"
+            android:paddingLeft="20dp"
+            android:text="По размеру ставки (Рубли)"
+            android:textAlignment="textStart"
+            android:textColor="@color/myWhite"
+            android:textSize="16dp" />
+
+        <CheckBox
+            android:id="@+id/chDol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="8dp"
+            android:button="@drawable/mycheckbox_orange"
+            android:layoutDirection="rtl"
+            android:paddingLeft="20dp"
+            android:text="По размеру ставки (Доллары)"
+            android:textAlignment="textStart"
+            android:textColor="@color/myWhite"
+            android:textSize="16dp" />
+        <CheckBox
+            android:id="@+id/chEuro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="8dp"
+            android:button="@drawable/mycheckbox_orange"
+            android:layoutDirection="rtl"
+            android:paddingLeft="20dp"
+            android:text="По размеру ставки (Евро)"
+            android:textAlignment="textStart"
+            android:textColor="@color/myWhite"
+            android:textSize="16dp" />
+
+        <CheckBox
+            android:id="@+id/chBanks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="8dp"
+            android:button="@drawable/mycheckbox_orange"
+            android:layoutDirection="rtl"
+            android:paddingLeft="20dp"
+            android:text="По банкам"
+            android:textAlignment="textStart"
+            android:textColor="@color/myWhite"
+            android:textSize="16dp" />
+
+        <CheckBox
+            android:id="@+id/chVklad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="8dp"
+            android:button="@drawable/mycheckbox_orange"
+            android:layoutDirection="rtl"
+            android:paddingLeft="20dp"
+            android:text="По названию вклада"
+            android:textAlignment="textStart"
+            android:textColor="@color/myWhite"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/orange" />
+
+
+        <Button
+            android:id="@+id/buttShow"
+            android:text="показать"
+            android:textSize="18dp"
+            android:textColor="@color/header2"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/button_orange_inside"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout-->
+

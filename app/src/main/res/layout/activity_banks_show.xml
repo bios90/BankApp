@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/miuiMiddleGray"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BanksShow">
+
+    <RelativeLayout
+        android:layout_weight="0.7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+    <TextView
+        android:fontFamily="@font/museosanscyrl_700"
+        android:background="@color/header2"
+        android:id="@+id/banksShowTitle"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="BLABLABLSA"
+        android:textColor="@color/orange" />
+
+        <ImageView
+            android:id="@+id/sortImage"
+            android:scaleX="-1"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_sort_orange_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/orange" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/header2" />
+    <Button
+        android:id="@+id/needHelp"
+
+        android:textAllCaps="false"
+        android:fontFamily="@font/museosanscyrl_700"
+        android:textColor="@color/header2"
+        android:text="Нужна помощь?"
+        android:background="@drawable/button_orange_inside"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</LinearLayout>

@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@drawable/details_background"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".DetailsVklad">
+
+
+            <TextView
+                android:id="@+id/cardName"
+
+                android:fontFamily="@font/museosanscyrl_500"
+                android:padding="8dp"
+                android:background="@drawable/roundedheader"
+                android:gravity="center"
+                android:textColor="@color/orange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:layout_gravity="center"
+                android:text="Карта Афигенная"
+                android:textAlignment="center"
+                android:textSize="20dp" />
+
+    <ScrollView
+        android:layout_marginBottom="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cardBankName"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_width="0dp"
+                    android:paddingLeft="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:layout_gravity="center"
+                    android:text="Сбербанк России"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="18dp" />
+
+                <RelativeLayout
+                    android:gravity="center"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/cardBankLogo"
+
+                        android:layout_width="63dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/sberbank_135x85" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardRubLayout"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/myGray" />
+
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Кредитование в рублях :"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="14"
+                        android:text="Минимальная ставка :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/cardRubStavka"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="6"
+                        android:paddingRight="20dp"
+                        android:text="23,99%"
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="10"
+                        android:text="Кредитный лимит :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/cardRubLimit"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="6"
+                        android:text="10 000 000р"
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardDolLayout"
+
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/myGray" />
+
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Кредитование в долларах :"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="14"
+                        android:text="Минимальная ставка :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/cardDolStavka"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="6"
+                        android:paddingRight="20dp"
+                        android:text="17,99%"
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="10"
+                        android:text="Кредитный лимит :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/cardDolLimit"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="6"
+                        android:text="20 000$"
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardEuroLayout"
+
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/myGray" />
+
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Кредитование в евро :"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="14"
+                        android:text="Минимальная ставка :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/cardEuroStavka"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="6"
+                        android:paddingRight="20dp"
+                        android:text="18,99%"
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="10"
+                        android:text="Кредитный лимит :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/cardEuroLimit"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="6"
+                        android:text="20 000$"
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardLlgotLayoutYes"
+
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/myGray" />
+
+
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="4dp"
+                android:text="Льготный период :"
+                android:textAlignment="center"
+                android:textColor="@color/header2"
+                android:textSize="16dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="14"
+                        android:text="Срок :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/cardLgotSrok"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="6"
+                        android:paddingRight="20dp"
+                        android:text="57 дней"
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="14dp"
+
+                        android:text="Действует на :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/cardLgotType"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:textAlignment="viewEnd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="12dp"
+                        android:text="снятие наличных"
+                        android:textColor="@color/orange"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/cardLlgotLayoutNo"
+
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <View
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/myGray" />
+
+                <LinearLayout
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/header2"
+
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_gravity="center"
+                        android:layout_weight="10"
+                        android:layout_marginLeft="14dp"
+                        android:text="Льготный период :"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_weight="6"
+                        android:layout_gravity="center"
+                        android:textSize="16dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/header2"
+                        android:text="отсутсвует"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <View
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/myGray" />
+
+            <LinearLayout
+                android:id="@+id/cardBesplatOLayout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/header2"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_gravity="center"
+                    android:layout_weight="10"
+                    android:layout_marginLeft="14dp"
+                    android:text="Бесплатное обслуживание :"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cardBesplatoneO"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_weight="6"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:text="да"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cardGodovoeLayout"
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/header2"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:layout_marginLeft="14dp"
+            android:text="Годовое обслуживание :"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cardObslujStoimost"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_weight="6"
+            android:layout_gravity="center"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:textColor="@color/orange"
+            android:text="50 000р"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/header2"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_gravity="center"
+                    android:layout_weight="10"
+                    android:layout_marginLeft="14dp"
+                    android:text="Cash Back :"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cardCashB"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_weight="6"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/orange"
+                    android:text="есть"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/header2"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:layout_marginLeft="14dp"
+            android:text="Процент за снятие наличных :"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cardNalSnyat"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_weight="6"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textColor="@color/orange"
+            android:text="от 4,9%"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/header2"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:layout_marginLeft="14dp"
+            android:text="Быстрое решение :"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cardBistroeR"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_weight="6"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textColor="@color/orange"
+            android:text="да"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/header2"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:layout_marginLeft="14dp"
+            android:text="Доставка карты :"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cardDostavka"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_weight="6"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textColor="@color/orange"
+            android:text="возможна"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/myGray" />
+
+
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="4dp"
+                android:text="Требования :"
+                android:textAlignment="center"
+                android:textColor="@color/header2"
+                android:textSize="16dp" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+
+
+            android:fontFamily="@font/museosanscyrl_300"
+            android:layout_weight="10"
+            android:layout_gravity="center"
+            android:textColor="@color/header2"
+            android:layout_marginLeft="14dp"
+            android:text="Возраст :"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cardAge"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_weight="6"
+            android:layout_gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/orange"
+            android:textAlignment="center"
+            android:text="от 21"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:fontFamily="@font/museosanscyrl_300"
+            android:layout_weight="10"
+            android:layout_gravity="center"
+            android:textColor="@color/header2"
+            android:layout_marginLeft="14dp"
+            android:text="Стаж работы :"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cardStaj"
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_weight="6"
+            android:layout_gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/orange"
+            android:textAlignment="center"
+            android:text="от 3х меясцев"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:fontFamily="@font/museosanscyrl_300"
+            android:layout_weight="10"
+            android:layout_gravity="center"
+            android:textColor="@color/header2"
+            android:layout_marginLeft="14dp"
+            android:text="Подтверждение дохода :"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cardPodtverj"
+
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_weight="6"
+            android:layout_gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/orange"
+            android:textAlignment="center"
+            android:text="не требуется"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="6dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:fontFamily="@font/museosanscyrl_300"
+            android:layout_weight="10"
+            android:layout_gravity="center"
+            android:textColor="@color/header2"
+            android:layout_marginLeft="14dp"
+            android:text="Регистрация :"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cardRegister"
+
+
+            android:fontFamily="@font/museosanscyrl_500"
+            android:layout_weight="6"
+            android:layout_gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/orange"
+            android:textAlignment="center"
+            android:text="не требуется"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/header2"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dimfcompany.bankapp.PageViewActivity">
+
+    <LinearLayout
+
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    <android.support.design.widget.AppBarLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/pageViewToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+        </android.support.v7.widget.Toolbar>
+        
+        <android.support.design.widget.TabLayout
+            android:id="@+id/pageViewTabs"
+            android:background="@color/header2"
+
+            app:tabTextAppearance="@style/tab_text"
+            app:tabIndicatorColor="@color/orange"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabBackground="@color/header2"
+            app:tabTextColor="@color/miuiLightGray"
+            app:tabSelectedTextColor="@color/orange"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+        </android.support.design.widget.TabLayout>
+        
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+
+        android:id="@+id/myViewPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </android.support.v4.view.ViewPager>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/header2" />
+
+    <Button
+        android:fontFamily="@font/museosanscyrl_700"
+        android:id="@+id/showBanksButt"
+
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:text="Подобрать"
+        android:textColor="@color/header2"
+        android:background="@drawable/button_orange_inside"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</LinearLayout>

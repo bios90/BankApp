@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:layoutDirection="rtl"
+            android:textSize="16dp"
+            android:textAlignment="textStart"
+            android:layout_marginRight="24dp"
+            android:text="Cash Back"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:button="@drawable/mycheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:layoutDirection="rtl"
+            android:textSize="16dp"
+            android:textAlignment="textStart"
+            android:layout_marginRight="24dp"
+            android:text="Бесплатное обслуживание"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:button="@drawable/mycheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:layoutDirection="rtl"
+            android:textSize="16dp"
+            android:textAlignment="textStart"
+            android:layout_marginRight="24dp"
+            android:text="Доставка карты"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:button="@drawable/mycheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:layoutDirection="rtl"
+            android:textSize="16dp"
+            android:textAlignment="textStart"
+            android:layout_marginRight="24dp"
+            android:text="Быстрое решение"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:button="@drawable/mycheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:layoutDirection="rtl"
+            android:textSize="16dp"
+            android:textAlignment="textStart"
+            android:layout_marginRight="24dp"
+            android:text="Низкая процентная ставка (до 20%)"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:button="@drawable/mycheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            style="@style/spinner_style_dark"
+            android:id="@+id/srokRaboty">
+        </Spinner>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:textSize="16dp"
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"
+                android:text="Cash Back"
+                android:id="@+id/ChBSnyatie"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:button="@drawable/mycheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:textSize="16dp"
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"
+                android:text="Бесплатное обслуживание"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:button="@drawable/mycheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:textSize="16dp"
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"
+                android:text="Доставка карты"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:button="@drawable/mycheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:textSize="16dp"
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"
+                android:text="Быстрое решение"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:button="@drawable/mycheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:textSize="16dp"
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"
+                android:text="Низкая процентная ставка(до 20%)"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:button="@drawable/mycheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@drawable/details_background"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".DetailsVklad">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/creditInfoName"
+
+                android:fontFamily="@font/museosanscyrl_500"
+                android:padding="8dp"
+                android:background="@drawable/roundedheader"
+                android:gravity="center"
+                android:textColor="@color/orange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:layout_gravity="center"
+                android:text="Кредит Афигенный"
+                android:textAlignment="center"
+                android:textSize="20dp" />
+
+            <LinearLayout
+
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/creditInfoBank"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_width="0dp"
+                    android:paddingLeft="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:layout_gravity="center"
+                    android:text="Сбербанк России"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="18dp" />
+
+                <RelativeLayout
+                    android:gravity="center"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+
+                    android:id="@+id/creditInfoLogo"
+                    android:layout_width="63dp"
+                    android:layout_height="40dp"
+
+                    android:src="@drawable/sberbank_135x85" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/creditRubLayout"
+
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <View
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/myGray" />
+
+
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+                android:textColor="@color/header2"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:textAlignment="center"
+                android:text="Кредит в рублях :"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_weight="14"
+                    android:layout_gravity="center"
+                    android:textColor="@color/header2"
+                    android:layout_marginLeft="14dp"
+                    android:text="Минимальная ставка по кредиту:"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/creditInfoRubStavka"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:paddingRight="20dp"
+                    android:layout_weight="6"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:textColor="@color/orange"
+                    android:textAlignment="center"
+                    android:text="8%"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_weight="10"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header2"
+                        android:layout_marginLeft="14dp"
+                        android:text="Минимальная сумма кредита:"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/creditInfoRubSumma"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_weight="6"
+                        android:layout_gravity="center"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:text="10 000 000р"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_weight="10"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header2"
+                        android:layout_marginLeft="14dp"
+                        android:text="Максимальный срок кредита :"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/creditInfoRubSrok"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_weight="6"
+                        android:layout_gravity="center"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:text="120 месяцев"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+
+            <!--GridLayout
+                android:columnCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/header2"
+                    android:layout_marginLeft="14dp"
+
+                    android:layout_columnWeight="2"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:text="Минимальная ставка по кредиту:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/creditInfoRubStavka"
+
+
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:textColor="@color/orange"
+                    android:textAlignment="center"
+                    android:layout_columnWeight="10"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:text="8%"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_marginLeft="14dp"
+                    android:textColor="@color/header2"
+                    android:layout_columnWeight="2"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:text="Максимальная сумма кредита :"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/creditInfoRubSumma"
+
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:textColor="@color/orange"
+                    android:textAlignment="center"
+                    android:layout_columnWeight="10"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:text="1000000₽"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textColor="@color/header2"
+                    android:layout_marginLeft="14dp"
+                    android:layout_columnWeight="2"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:text="Максимальный срок кредита :"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/creditInfoRubSrok"
+
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="14dp"
+                    android:textColor="@color/orange"
+                    android:textAlignment="center"
+                    android:layout_columnWeight="10"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:text="120 месяцев"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </GridLayout-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/creditDolLayout"
+
+                android:visibility="visible"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <View
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/myGray" />
+
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+                android:textColor="@color/header2"
+                android:layout_marginTop="4dp"
+                android:textAlignment="center"
+                android:text="Кредит в долларах :"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_weight="14"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header2"
+                        android:layout_marginLeft="14dp"
+                        android:text="Минимальная ставка по кредиту:"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/creditInfoDolStavka"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:paddingRight="20dp"
+                        android:layout_weight="6"
+                        android:layout_gravity="center"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:text="8%"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_weight="14"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header2"
+                        android:layout_marginLeft="14dp"
+                        android:text="Минимальная сумма кредита:"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/creditInfoDolSumma"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:paddingRight="20dp"
+                        android:layout_weight="6"
+                        android:layout_gravity="center"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:text="35000$"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_weight="10"
+                        android:layout_gravity="center"
+                        android:textColor="@color/header2"
+                        android:layout_marginLeft="14dp"
+                        android:text="Максимальный срок кредита :"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/creditInfoDolSrok"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:layout_weight="6"
+                        android:layout_gravity="center"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:text="120 месяцев"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <!--GridLayout
+                    android:columnCount="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/header2"
+                        android:layout_marginLeft="14dp"
+                        android:layout_columnWeight="10"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:text="Минимальная ставка по кредиту:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/creditInfoDolStavka"
+
+
+                        android:layout_gravity="center"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:layout_columnWeight="6"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:text="8%"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+
+                        android:layout_marginLeft="14dp"
+                        android:textColor="@color/header2"
+                        android:layout_columnWeight="10"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:text="Максимальная сумма кредита :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/creditInfoDolSumma"
+
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:layout_columnWeight="6"
+                        android:layout_row="1"
+                        android:layout_column="1"
+                        android:text="11000000$"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textColor="@color/header2"
+                        android:layout_marginLeft="14dp"
+                        android:layout_columnWeight="10"
+                        android:layout_column="0"
+                        android:layout_row="2"
+                        android:text="Максимальный срок кредита :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/creditInfoDolSrok"
+
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:layout_columnWeight="6"
+                        android:layout_row="2"
+                        android:layout_column="1"
+                        android:text="91 месяц"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </GridLayout-->
+            </LinearLayout>
+
+            //regoion Euro
+            <View
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/myGray" />
+
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+                android:visibility="gone"
+                android:textColor="@color/header2"
+                android:layout_marginTop="4dp"
+                android:textAlignment="center"
+                android:text="Кредиты в Евро :"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <GridLayout
+                android:visibility="gone"
+                android:columnCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:textColor="@color/header2"
+                    android:layout_marginLeft="14dp"
+                    android:layout_columnWeight="2"
+                    android:layout_column="0"
+                    android:text="Максимальная ставка по кредиту :"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/vkladInfoEuroStavka"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:textSize="16dp"
+                    android:textColor="@color/orange"
+                    android:textAlignment="center"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:text="2.2%"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_marginLeft="14dp"
+                    android:textColor="@color/header2"
+                    android:layout_columnWeight="8"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:text="Минимальная сумма кредита :"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/vkladInfoEuroSymma"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:textSize="16dp"
+                    android:textColor="@color/orange"
+                    android:textAlignment="center"
+                    android:layout_columnWeight="5"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:text="30000 €"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_marginLeft="14dp"
+                    android:layout_columnWeight="8"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:textColor="@color/header2"
+                    android:text="Минимальный срок кредита :"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/vkladInfoEuroSrok"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:textSize="16dp"
+                    android:textColor="@color/orange"
+                    android:textAlignment="center"
+                    android:layout_columnWeight="5"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:text="91 день"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content" />
+
+            </GridLayout>
+            //end region
+
+            <View
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/myGray" />
+
+            <LinearLayout
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/header2"
+
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_gravity="center"
+                    android:layout_weight="10"
+                    android:layout_marginLeft="14dp"
+                    android:text="Кредит-Рефинансирование :"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/creditInfoRefinans"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_weight="6"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:text="да"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/header2"
+
+                android:fontFamily="@font/museosanscyrl_300"
+                android:layout_gravity="center"
+                android:layout_weight="10"
+                android:layout_marginLeft="14dp"
+                android:text="Залог/поручительство :"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/creditInfoObes"
+
+                android:fontFamily="@font/museosanscyrl_500"
+                android:layout_weight="6"
+                android:textSize="16dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@color/orange"
+                android:text="не требуется"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_gravity="center"
+                    android:layout_weight="10"
+                    android:textColor="@color/header2"
+                    android:layout_marginLeft="14dp"
+                    android:text="Стаж работы :"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/creditInfoStaj"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_weight="6"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/orange"
+                    android:text="от 3х месяцев"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_gravity="center"
+                    android:layout_weight="10"
+                    android:textColor="@color/header2"
+                    android:layout_marginLeft="14dp"
+                    android:layout_columnWeight="10"
+                    android:text="Нужен только паспорт:"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/creditInfoTolkoPass"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:layout_weight="6"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/orange"
+                    android:text="да"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/myGray" />
+
+            <TextView
+                android:id="@+id/creditInfoPodtverjName"
+
+                android:fontFamily="@font/museosanscyrl_500"
+                android:layout_marginTop="6dp"
+                android:textAlignment="center"
+                android:textColor="@color/header2"
+                android:textSize="16dp"
+                android:text="Подтверждение дохода (на выбор) :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+                android:visibility="gone"
+                android:id="@+id/creditInfoNDFL"
+                android:layout_marginTop="4dp"
+                android:textSize="16dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/orange"
+                android:text="- справки НДФЛ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+                android:visibility="gone"
+                android:id="@+id/creditInfoBankForm"
+                android:textSize="16dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/orange"
+                android:text="- справки по форме банка"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+                android:visibility="gone"
+                android:id="@+id/creditInfoOther"
+                android:textSize="16dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/orange"
+                android:text="- другие виды подтверждения"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:fontFamily="@font/museosanscyrl_500"
+                android:visibility="gone"
+                android:id="@+id/creditInfoNoPodtverj"
+                android:textSize="16dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/orange"
+                android:text="- не требуется"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,353 @@
+<FrameLayout android:id="@+id/frameCard"
+
+    android:background="@color/myWhite"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.dimfcompany.bankapp.FragCredCard"
+    >
+
+    <ScrollView
+        android:id="@+id/credCardScrollV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <!--TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Максимальное расстояние до банка:"
+            android:textAlignment="center"
+            android:textColor="@color/header2"
+            android:textSize="18dp" />
+
+        <RelativeLayout
+            android:layout_marginTop="4dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:id="@+id/credCardDistTV"
+                android:textColor="@color/orange"
+                android:textSize="28dp"
+                android:textAlignment="textEnd"
+                android:text="0.1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/credCardDistTV"
+                android:textColor="@color/orange"
+                android:textSize="20dp"
+                android:text="км"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout-->
+
+            <!--com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/credCerdDistSeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="8dp"
+            app:isb_show_indicator="false"
+            app:isb_max="50"
+            app:isb_min="0.1"
+            app:isb_progress="1"
+            app:isb_progress_value_float="true"
+            app:isb_seek_bar_type="continuous_texts_ends"
+            app:isb_text_color="@color/header2"
+            app:isb_text_left_end="0.1км"
+            app:isb_text_right_end="50км"
+            app:isb_thumb_color="@color/orange"
+            app:isb_track_background_bar_color="@color/myGray"
+            app:isb_track_progress_bar_color="@color/orange" /-->
+
+
+            <TextView
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/museosanscyrl_500"
+                android:text="Кредитный лимит :"
+                android:textAlignment="center"
+                android:textColor="@color/header2"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/credCardLimitTV"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:text="10 000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/orange"
+                    android:textSize="28dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/credCardLimitTV"
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:text=" р"
+                    android:textColor="@color/orange"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <com.warkiz.widget.IndicatorSeekBar
+                android:id="@+id/credCardLimitSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="8dp"
+                app:isb_max="130"
+                app:isb_min="2"
+                app:isb_progress="20"
+                app:isb_seek_bar_type="continuous_texts_ends"
+                app:isb_show_indicator="false"
+                app:isb_text_color="@color/header2"
+                app:isb_text_left_end="10 000"
+                app:isb_text_right_end="1 млн"
+                app:isb_thumb_color="@color/orange"
+                app:isb_track_background_bar_color="@color/myGray"
+                app:isb_track_progress_bar_color="@color/orange" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/header2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/museosanscyrl_500"
+                android:text="Льготный период :"
+                android:textAlignment="center"
+                android:textColor="@color/header2"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/credCardSrokTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:text="50 дней"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/orange"
+                    android:textSize="28dp" />
+
+            </RelativeLayout>
+
+            <com.warkiz.widget.IndicatorSeekBar
+                android:id="@+id/credCardSrokSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="8dp"
+                app:isb_max="73"
+                app:isb_min="0"
+                app:isb_progress="25"
+                app:isb_seek_bar_type="continuous_texts_ends"
+                app:isb_show_indicator="false"
+                app:isb_text_color="@color/header2"
+                app:isb_text_left_end="0 дней"
+                app:isb_text_right_end="365 дней"
+                app:isb_thumb_color="@color/orange"
+                app:isb_track_background_bar_color="@color/myGray"
+                app:isb_track_progress_bar_color="@color/orange" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/header2" />
+
+            <CheckBox
+                android:id="@+id/ChBbezspravok"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="8dp"
+                android:button="@drawable/mycheckbox"
+                android:layoutDirection="rtl"
+                android:text="Без справок о доходах"
+                android:textAlignment="textStart"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/CHBlgotNalichnie"
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="8dp"
+                android:button="@drawable/mycheckbox"
+                android:layoutDirection="rtl"
+                android:text="Льготный период на снятие наличных"
+                android:textAlignment="textStart"
+                android:textSize="16dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/header2" />
+
+            <Button
+                android:id="@+id/moreInfoButtonCredCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_trans"
+                android:drawableEnd="@drawable/ic_keyboard_arrow_down_black_24dp"
+                android:fontFamily="@font/museosanscyrl_500"
+                android:paddingLeft="22dp"
+                android:paddingRight="16dp"
+                android:text="Дополнительные параметры" />
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/expandInfoCredCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:ael_duration="250"
+                app:ael_expanded="false"
+                app:ael_interpolator="accelerate"
+                app:ael_orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/ChbCashB"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@drawable/mycheckbox"
+                        android:layoutDirection="rtl"
+                        android:text="Cash Back"
+                        android:textAlignment="textStart"
+                        android:textSize="16dp" />
+
+                    <CheckBox
+                        android:id="@+id/CHBBesplatnoeO"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@drawable/mycheckbox"
+                        android:layoutDirection="rtl"
+                        android:text="Бесплатное обслуживание"
+                        android:textAlignment="textStart"
+                        android:textSize="16dp" />
+
+                    <CheckBox
+                        android:id="@+id/CHBdostavka"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@drawable/mycheckbox"
+                        android:layoutDirection="rtl"
+                        android:text="Доставка карты"
+                        android:textAlignment="textStart"
+                        android:textSize="16dp" />
+
+                    <CheckBox
+                        android:id="@+id/CHBBistroeREsh"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@drawable/mycheckbox"
+                        android:layoutDirection="rtl"
+                        android:text="Быстрое решение"
+                        android:textAlignment="textStart"
+                        android:textSize="16dp" />
+
+                    <CheckBox
+                        android:id="@+id/CHBlowProcent"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@drawable/mycheckbox"
+                        android:layoutDirection="rtl"
+                        android:text="Низкая процентная ставка (до 20%)"
+                        android:textAlignment="textStart"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+            <!--Button
+            android:textColor="@color/orange"
+            android:background="@color/header2"
+            android:text="Подобрать Кредиты"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" /-->
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,106 @@
+<resources>
+
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:buttonStyle">@style/MyButton</item>
+
+        <item name="android:textViewStyle">@style/FuturaTextView</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/header2</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/museosanscyrl_700</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">18dp</item>
+
+        <item name="android:padding">0dp</item>
+
+    </style>
+
+    <style name="Custom" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+
+        <item name="DialogTitleText">Загрузка...</item>
+        <item name="DialogSpotColor">@color/orange</item>
+        <item name="DialogSpotCount">4</item>
+    </style>
+
+
+
+    <style name="MyButton" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">@font/yandex_regular</item>
+    </style>
+
+    <style name="FuturaTextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/yandex_regular</item>
+     </style>
+
+
+
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <item name="colorPrimaryDark">@color/header2</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+    </style>
+
+    <style name="spinner_style" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@drawable/dark_spinner_background</item>
+        <item name="android:popupBackground">@drawable/dark_spinner_background</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+
+    </style>
+
+    <style name="spinner_style_dark">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@drawable/spinner3_dark</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <!--item name="android:layout_marginTop">10dp</item-->
+        <item name="android:popupBackground">@drawable/spinner2</item>
+    </style>
+
+    <style name="Activity_Dialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowMinWidthMajor">80%</item>w
+        <item name="android:windowMinWidthMinor">80%</item>
+
+        <item name="colorControlNormal">@color/orange</item>
+        <item name="colorControlActivated">@color/orange</item>
+        <item name="colorControlHighlight">@color/orange</item>
+
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="Activity_Dialog_Details" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowMinWidthMajor">90%</item>w
+        <item name="windowMinWidthMinor">90%</item>
+
+
+
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+</resources>
