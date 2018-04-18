@@ -335,6 +335,7 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
             @Override
             public void onClick(View v)
             {
+                getBanks.setEnabled(false);
                 String query = FormingQuery();
 
                 RequestQueue.RequestFinishedListener finishedListener=new RequestQueue.RequestFinishedListener()
@@ -385,6 +386,7 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
                     }
                 };
                 LoadVklads.GetVklads(query,getContext(),finishedListener);
+                getBanks.setEnabled(true);
             }
         });
 
