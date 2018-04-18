@@ -221,10 +221,21 @@ public class SortCard extends AppCompatActivity
                     public void onRequestFinished(Request request)
                     {
                         cardsSorted=LoadCard.cards;
-                        Intent loadShow = new Intent(SortCard.this,BanksShow.class);
-                        loadShow.putExtra("title",33);
-                        loadShow.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(loadShow);
+                        if(cardsSorted.size()==0)
+                        {
+                            finish();
+//                            Intent loadStart= new Intent(SortCard.this,PageViewActivity.class);
+//                            loadStart.putExtra("error",1);
+//                            loadStart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                            startActivity(loadStart);
+                        }
+                        else
+                            {
+                            Intent loadShow = new Intent(SortCard.this, BanksShow.class);
+                            loadShow.putExtra("title", 33);
+                            loadShow.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(loadShow);
+                            }
                     }
                 };
                 LoadCard.GetCards(query,SortCard.this,finishedListener);

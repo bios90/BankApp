@@ -81,8 +81,8 @@
                         android:layout_marginTop="8dp"
                         app:isb_max="80"
                         app:isb_min="1"
-                        app:isb_progress="1"
-                        app:isb_progress_value_float="true"
+                        app:isb_progress="2"
+
                         app:isb_seek_bar_type="discrete_ticks_texts_ends"
                         app:isb_show_indicator="false"
                         app:isb_text_color="@color/header2"

@@ -6,7 +6,7 @@ android {
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
         applicationId "com.dimfcompany.bankapp"
-        minSdkVersion 19
+        minSdkVersion 20
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -29,6 +29,7 @@ dependencies {
     })
 
 
+    compile 'com.github.turing-tech:MaterialScrollBar:12.+'
     compile 'com.github.d-max:spots-dialog:0.7@aar'
     compile 'com.android.support:appcompat-v7:26.+'
     compile "com.android.support:exifinterface:26.1.0"

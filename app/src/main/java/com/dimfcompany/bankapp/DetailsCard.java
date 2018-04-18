@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,6 +18,7 @@ public class DetailsCard extends AppCompatActivity
     TextView name,bankName,stavkarub,stavkadol,stavkaeuro,limitrub,limitdol,limiteuro,lgotSrok,lgottype,besplatO,stoimostO,cashBack,nalSnyatie,bistrR,dostavka,age,staj,podtverj,register;
     LinearLayout rubLA,dolLA,euroLA,lgotYesLA,lgotNoLA,besplatLA,yearPAyLA;
     ImageView logo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -58,6 +60,12 @@ public class DetailsCard extends AppCompatActivity
         yearPAyLA=(LinearLayout)findViewById(R.id.cardGodovoeLayout);
 
         logo=(ImageView)findViewById(R.id.cardBankLogo);
+
+        LinearLayout.LayoutParams paramForIndividual = new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                8.0f
+        );
         //endregion
 
         ModelCard card= BanksShow.currentCards.get(num);
@@ -76,7 +84,10 @@ public class DetailsCard extends AppCompatActivity
             }
             else
                 {
+
+                    limitrub.setLayoutParams(paramForIndividual);
                     limitrub.setText("индивидуально");
+                    limitrub.setTextSize(TypedValue.COMPLEX_UNIT_DIP,14);
                 }
         }
         else
@@ -93,7 +104,9 @@ public class DetailsCard extends AppCompatActivity
             }
             else
                 {
+                    limitdol.setLayoutParams(paramForIndividual);
                     limitdol.setText("индивидуально");
+                    limitdol.setTextSize(TypedValue.COMPLEX_UNIT_DIP,14);
                 }
         }
         else
@@ -110,7 +123,9 @@ public class DetailsCard extends AppCompatActivity
             }
             else
                 {
+                    limiteuro.setLayoutParams(paramForIndividual);
                     limiteuro.setText("индивидуально");
+                    limiteuro.setTextSize(TypedValue.COMPLEX_UNIT_DIP,14);
                 }
         }
         else
@@ -265,5 +280,7 @@ public class DetailsCard extends AppCompatActivity
                 return daysstr;
             }
     }
+
+
 
 }

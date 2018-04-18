@@ -59,7 +59,7 @@ public class VkladFrag extends Fragment implements AdapterView.OnItemSelectedLis
             {
                 ((TextView)parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.header2));
                 TextView testTest=(TextView) view;
-                Toast.makeText(getActivity(),"you Selected :"+ testTest.getText(),Toast.LENGTH_SHORT).show();
+
             }
 
             @Override

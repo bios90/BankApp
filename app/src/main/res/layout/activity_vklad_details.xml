@@ -117,24 +117,110 @@
                 android:layout_height="1dp"
                 android:background="@color/myGray" />
 
+
             <LinearLayout
                 android:id="@+id/vkladRubLA"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <TextView
-                android:fontFamily="@font/museosanscyrl_500"
-                android:textColor="@color/header2"
-                android:layout_marginTop="4dp"
-                android:layout_marginLeft="8dp"
-                android:textAlignment="center"
-                android:text="Вклады в рублях :"
-                android:textSize="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:text="Вклады в рублях :"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="14"
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:text="Максимальная ставка по вкладу :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/vkladInfoRubStavka"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:text="8%"
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="14"
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:text="Минимальная сумма вклада :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/vkladInfoRubSumma"
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:text="1000000 ₽"
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+
+                        android:layout_weight="14"
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:text="Минимальный срок вклада :"
+                        android:textColor="@color/header2" />
+
+                    <TextView
+                        android:id="@+id/vkladInfoRumSrok"
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:text="91 день"
+
+                        android:textAlignment="center"
+                        android:textColor="@color/orange"
+                        android:textSize="16dp" />
+                </LinearLayout>
 
 
-            <GridLayout
+                <!--GridLayout
                 android:columnCount="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -215,15 +301,15 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content" />
 
-            </GridLayout>
+            </GridLayout-->
 
-            <View
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/myGray" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/myGray" />
             </LinearLayout>
 
             <LinearLayout
@@ -241,8 +327,89 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <GridLayout
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:textColor="@color/header2"
+                        android:layout_weight="14"
+                        android:layout_marginLeft="14dp"
+                        android:text="Максимальная ставка по вкладу :"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/vkladInfoDolStavka"
+
+                        android:layout_weight="7"
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:text="2.2%"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_marginLeft="14dp"
+                        android:textColor="@color/header2"
+                        android:layout_weight="14"
+                        android:text="Минимальная сумма вклада :"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/vkladInfoDolSymma"
+
+                        android:layout_weight="7"
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:text="30000 $"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_marginLeft="14dp"
+                        android:textColor="@color/header2"
+                        android:layout_weight="14"
+                        android:text="Минимальный срок вклада :"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/vkladInfoDolSrok"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:layout_weight="7"
+                        android:text="91 день"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            <!--GridLayout
                 android:columnCount="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -320,7 +487,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content" />
 
-            </GridLayout>
+            </GridLayout-->
 
             <View
                 android:layout_marginTop="8dp"
@@ -330,6 +497,12 @@
                 android:layout_height="1dp"
                 android:background="@color/myGray" />
             </LinearLayout>
+
+
+
+
+
+
 
             <LinearLayout
                 android:id="@+id/vkladEuroLA"
@@ -346,8 +519,90 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <GridLayout
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:textColor="@color/header2"
+                        android:layout_marginLeft="14dp"
+                        android:layout_weight="14"
+                        android:text="Максимальная ставка по вкладу :"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/vkladInfoEuroStavka"
+
+                        android:layout_weight="7"
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:text="2.2%"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_300"
+                    android:layout_marginLeft="14dp"
+                    android:textColor="@color/header2"
+                    android:layout_weight="14"
+                    android:text="Минимальная сумма вклада :"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/vkladInfoEuroSymma"
+
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:textSize="16dp"
+                    android:textColor="@color/orange"
+                    android:textAlignment="center"
+                    android:layout_weight="7"
+                    android:text="30000 €"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:layout_marginLeft="14dp"
+
+                        android:layout_weight="14"
+                        android:textColor="@color/header2"
+                        android:text="Минимальный срок вклада :"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/vkladInfoEuroSrok"
+
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:textSize="16dp"
+                        android:textColor="@color/orange"
+                        android:textAlignment="center"
+                        android:layout_weight="7"
+                        android:text="91 день"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            <!--GridLayout
                 android:columnCount="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -425,7 +680,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content" />
 
-            </GridLayout>
+            </GridLayout-->
 
             <View
                 android:layout_marginTop="8dp"
@@ -436,7 +691,92 @@
                 android:background="@color/myGray" />
             </LinearLayout>
 
-            <GridLayout
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/header2"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:textSize="16dp"
+                    android:layout_weight="14"
+                    android:layout_marginLeft="14dp"
+
+                    android:text="Пополнение вклада :"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/vkladInfoPopolnenie"
+
+                    android:layout_weight="7"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+
+                    android:textColor="@color/orange"
+                    android:text="Возможно"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_weight="14"
+                    android:text="Частичное снятие :"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="7"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:id="@+id/vkladInfoSnyatie"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:text="Возможно"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="14"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="14dp"
+                    android:text="Льготное расторжение:"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="7"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:id="@+id/vkladInfoRastojenie"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:text="Возможно"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!--GridLayout
                 android:layout_marginTop="6dp"
                 android:columnCount="2"
                 android:rowCount="3"
@@ -513,10 +853,11 @@
 
 
 
-            </GridLayout>
+            </GridLayout-->
 
 
         </LinearLayout>
+
 
     </ScrollView>
 </LinearLayout>

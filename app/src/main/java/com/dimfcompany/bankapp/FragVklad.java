@@ -287,7 +287,7 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
 
                     } catch (JSONException e)
                     {
-                        Toast.makeText(getContext(),"Json Error",Toast.LENGTH_SHORT).show();
+
                     }
                 }
             }
@@ -298,7 +298,7 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
             @Override
             public void onErrorResponse(VolleyError error)
             {
-                Toast.makeText(getContext(),"Cant connect error",Toast.LENGTH_SHORT).show();
+
             }
         };
         //endregion
@@ -308,7 +308,6 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
             public void onRequestFinished(Request request)
             {
                 staticBanks=bankList;
-                //Toast.makeText(getActivity(),(staticBanks.get(1).getLogo()),Toast.LENGTH_SHORT).show();
                 Intent loadShow = new Intent(getActivity(),BanksShow.class);
                 loadShow.putExtra("title",1);
                 startActivity(loadShow);
@@ -372,11 +371,12 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
                                     public void run()
                                     {
                                         sd.dismiss();
-                                        DialogCustom dialog= new DialogCustom(getActivity(),"По вашему запросу вклады не найдены,попробуйте изменить запрос.");
-                                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                        dialog.show();
-                                        Window window=dialog.getWindow();
-                                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+                                        PageViewActivity.ShowToast(getContext(),"По вашему запросу вклады не найдены,попробуйте изменить запрос.");
+//                                        DialogCustom dialog= new DialogCustom(getActivity(),"По вашему запросу вклады не найдены,попробуйте изменить запрос.");
+//                                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                                        dialog.show();
+//                                        Window window=dialog.getWindow();
+//                                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
                                     }
                                 }, 450);
 
@@ -405,34 +405,35 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
         switch (spinerint)
         {
             case 0:
-                String query = "Select * from `vklad` where ((`rubstavka` >"+stavka+" and `rubstavka` !=0.0) or (`dolstavka` >"+stavka+" and `dolstavka` !=0.0) or (`eurostavka` >"+stavka+" and `eurostavka` !=0.0))";// and `snyatie`=0 and `popolnenie`=0 and `rastorjenie` =0"
+                String query = "Select * from `vklad` where ((`rubstavka` >="+stavka+" and `rubstavka` !=0.0) or (`dolstavka` >="+stavka+" and `dolstavka` !=0.0) or (`eurostavka` >="+stavka+" and `eurostavka` !=0.0))";// and `snyatie`=0 and `popolnenie`=0 and `rastorjenie` =0"
                 if(popol==1)query+=" and popolnenie=1";
                 if(snyat==1)query+=" and snyatie=1";
                 if(rastorj==1)query+=" and rastorjenie=1";
                 queryfinal=query;
                 break;
             case 1:
-                String queryrub = "Select * from `vklad` where (`rubstavka` >"+stavka+" and `rubstavka` !=0.0)";
+                String queryrub = "Select * from `vklad` where (`rubstavka` >="+stavka+" and `rubstavka` !=0.0)";
                 if(popol==1)queryrub+=" and popolnenie=1";
                 if(snyat==1)queryrub+=" and snyatie=1";
                 if(rastorj==1)queryrub+=" and rastorjenie=1";
                 queryfinal=queryrub;
                 break;
             case 2:
-                String querydol = "Select * from `vklad` where (`dolstavka` >"+stavka+" and `dolstavka` !=0.0)";
+                String querydol = "Select * from `vklad` where (`dolstavka` >="+stavka+" and `dolstavka` !=0.0)";
                 if(popol==1)querydol+=" and popolnenie=1";
                 if(snyat==1)querydol+=" and snyatie=1";
                 if(rastorj==1)querydol+=" and rastorjenie=1";
                 queryfinal=querydol;
                 break;
             case 3:
-                String queryeuro = "Select * from `vklad` where (`dolstavka` >"+stavka+" and `dolstavka` !=0.0)";
+                String queryeuro = "Select * from `vklad` where (`eurostavka` >="+stavka+" and `eurostavka` !=0.0)";
                 if(popol==1)queryeuro+=" and popolnenie=1";
                 if(snyat==1)queryeuro+=" and snyatie=1";
                 if(rastorj==1)queryeuro+=" and rastorjenie=1";
                 queryfinal=queryeuro;
                 break;
         }
+        Log.e("SDFSDf",queryfinal);
         return queryfinal;
 
     }

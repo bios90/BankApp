@@ -11,9 +11,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -57,15 +59,17 @@ public class PageViewActivity extends AppCompatActivity {
                 switch (pos)
                 {
                     case 1:
+                        myPager.setCurrentItem(1);
                         currentCard.showButton();
                         break;
                     case 0:
+                        myPager.setCurrentItem(0);
                         currentVklad.ShowButton();
                         break;
                     case 2:
+                        myPager.setCurrentItem(2);
                         currentCredit.ShowButton();
                         break;
-
                 }
             }
 
@@ -102,6 +106,23 @@ public class PageViewActivity extends AppCompatActivity {
                 showButton.performClick();
             }
         }, 250);
+    }
+
+    public static void ShowToast(Context ctx,String msg)
+    {
+        Toast toast = Toast.makeText(ctx,msg, Toast.LENGTH_SHORT);
+        View toastView = toast.getView();
+        TextView toastMessage = (TextView) toastView.findViewById(android.R.id.message);
+        toastMessage.setTextSize(16);
+        toastMessage.setTextColor(ctx.getResources().getColor(R.color.orange));
+        float scale = ctx.getResources().getDisplayMetrics().density;
+        int lefrright = (int) (16 * scale + 0.5f);
+        int topbottom = (int) (4 * scale + 0.5f);
+        toastMessage.setPadding(lefrright, 8, lefrright, 8);
+        toastMessage.setCompoundDrawablePadding(16);
+        toastView.setBackground(ctx.getResources().getDrawable(R.drawable.toastbg));
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 
     public static Boolean isInternetOn(Context ctx)

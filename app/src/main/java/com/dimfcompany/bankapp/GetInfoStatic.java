@@ -66,7 +66,7 @@ public class GetInfoStatic {
                         count++;
 
                     } catch (JSONException e) {
-                        Toast.makeText(ctx, "Json Error", Toast.LENGTH_SHORT).show();
+
                     }
                 }
             }
@@ -76,7 +76,7 @@ public class GetInfoStatic {
         Response.ErrorListener errorListener = new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ctx, "Cant connect error", Toast.LENGTH_SHORT).show();
+
             }
         };
         //endregion
@@ -116,7 +116,7 @@ public class GetInfoStatic {
             String add = " or id=" + String.valueOf(neededid.get(a));
             query = query + add;
         }
-        Toast.makeText(ctx, query, Toast.LENGTH_LONG).show();
+
         //endregion
 
         //region MinMaxREsponseLisener
@@ -127,7 +127,7 @@ public class GetInfoStatic {
                 try {
                     jsonArray = new JSONArray(response);
                 } catch (JSONException e) {
-                    Toast.makeText(ctx, "Shit happens", Toast.LENGTH_LONG).show();
+
                     e.printStackTrace();
                 }
 
@@ -156,7 +156,7 @@ public class GetInfoStatic {
 
                     } catch (JSONException e)
                     {
-                        Toast.makeText(ctx, "Json Error", Toast.LENGTH_SHORT).show();
+
                     }
 
             }
@@ -167,7 +167,7 @@ public class GetInfoStatic {
         Response.ErrorListener errorListener = new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ctx, "Error in minmax", Toast.LENGTH_SHORT).show();
+
             }
         };
         //endregion

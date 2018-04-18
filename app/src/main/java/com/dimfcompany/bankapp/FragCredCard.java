@@ -148,7 +148,7 @@ public class FragCredCard extends Fragment
 
                  if(progress<=60 )
                  {
-                     limit=(progress*5000);
+                     limit = (progress * 5000);
 
                  }else
                      {
@@ -295,11 +295,12 @@ public class FragCredCard extends Fragment
                                     public void run()
                                     {
                                         sd.dismiss();
-                                        DialogCustom dialog= new DialogCustom(getActivity(),"По вашему запросу карты не найдены,попробуйте изменить запрос.");
-                                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                        dialog.show();
-                                        Window window=dialog.getWindow();
-                                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+                                        PageViewActivity.ShowToast(getContext(),"По вашему запросу карты не найдены,попробуйте изменить запрос.");
+//                                        DialogCustom dialog= new DialogCustom(getActivity(),"По вашему запросу карты не найдены,попробуйте изменить запрос.");
+//                                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                                        dialog.show();
+//                                        Window window=dialog.getWindow();
+//                                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
                                     }
                                 }, 1600);
 
@@ -316,6 +317,10 @@ public class FragCredCard extends Fragment
     String FormingQuery()
     {
         String query = "Select * from `card` where ";
+        if (limit==10000)
+        {
+            limit=5000;
+        }
         String limstr = "(`rublimit` >="+limit+" or `dollimit`>="+((int)limit/60)+" or `eurolimit`>="+((int)limit/75)+")";
         query+=limstr;
         query+=" and `lgotsrok`>="+srok+"";

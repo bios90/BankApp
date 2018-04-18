@@ -84,9 +84,8 @@ public class BanksShow extends AppCompatActivity {
             {
                 SortDialogActvt.choosedChB=0;
                 currentVklads= FragVklad.vkladList;
-                titleStr="Вклады";
+                titleStr="Вклады "+"("+currentVklads.size()+")";
                 title.setText(titleStr);
-                Toast.makeText(BanksShow.this,String.valueOf(currentVklads.size()),Toast.LENGTH_SHORT).show();
                 showVklads();
                 SetSortVklad();
                 break;
@@ -94,7 +93,7 @@ public class BanksShow extends AppCompatActivity {
             case 11:
             {
                 currentVklads=SortDialogActvt.vkladsSorted;
-                titleStr="Вклады";
+                titleStr="Вклады "+"("+currentVklads.size()+")";
                 title.setText(titleStr);
                 showVklads();
                 SetSortVklad();
@@ -104,7 +103,7 @@ public class BanksShow extends AppCompatActivity {
             {
                 SortCredit.choosedChB=0;
                 currentCredits= FragCredit.creditList;
-                titleStr="Кредиты";
+                titleStr="Кредиты "+"("+currentCredits.size()+")";
                 title.setText(titleStr);
                 showCredits();
                 SetSortCredit();
@@ -113,7 +112,7 @@ public class BanksShow extends AppCompatActivity {
             case 22:
             {
                 currentCredits=SortCredit.creditsSorted;
-                titleStr="Кредиты";
+                titleStr="Кредиты "+"("+currentCredits.size()+")";
                 title.setText(titleStr);
                 showCredits();
                 SetSortCredit();
@@ -123,7 +122,7 @@ public class BanksShow extends AppCompatActivity {
             {
                 SortCard.choosedChB=0;
                 currentCards= FragCredCard.cardList;
-                titleStr="Кредитные Карты";
+                titleStr="Кредитные Карты "+"("+currentCards.size()+")";
                 title.setText(titleStr);
                 showCards();
                 setSortCard();
@@ -132,7 +131,7 @@ public class BanksShow extends AppCompatActivity {
             case 33:
             {
                 currentCards= SortCard.cardsSorted;
-                titleStr="Кредитные Карты";
+                titleStr="Кредитные Карты "+"("+currentCards.size()+")";
                 title.setText(titleStr);
                 showCards();
                 setSortCard();
@@ -149,11 +148,12 @@ public class BanksShow extends AppCompatActivity {
 
         super.onResume();
         if(newRequestsaved==99) {
-            DialogCustom dialog = new DialogCustom(BanksShow.this, "Ваш вопрос принят,скоро мы с вами свяжемся.", "Успешно");
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            dialog.show();
-            Window window = dialog.getWindow();
-            window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+            PageViewActivity.ShowToast(BanksShow.this,"Ваш вопрос принят,скоро мы с вами свяжемся.");
+//            DialogCustom dialog = new DialogCustom(BanksShow.this, "Ваш вопрос принят,скоро мы с вами свяжемся.", "Успешно");
+//            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//            dialog.show();
+//            Window window = dialog.getWindow();
+//            window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
             newRequestsaved=0;
         }
     }
@@ -172,10 +172,8 @@ public class BanksShow extends AppCompatActivity {
 
     void showCredits()
     {
-        Toast.makeText(BanksShow.this,String.valueOf(currentCredits.size()),Toast.LENGTH_SHORT).show();
         creditAdapter=new AdapterCredit(this,currentCredits);
         recView.setAdapter(creditAdapter);
-        //if(!currentCredit.get(0).isObes()) Toast.makeText(BanksShow.this,"OnbesssedNooo",Toast.LENGTH_SHORT).show();
     }
 
     //region sortButton
@@ -229,23 +227,23 @@ public class BanksShow extends AppCompatActivity {
     {
 
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode==1)
-        {
-            if(resultCode==Activity.RESULT_OK)
-            {
-                int res=data.getIntExtra("result",0);
-                if(res==1)
-                {
-
-                    DialogCustom dialog= new DialogCustom(BanksShow.this,"Ваш вопрос принят,скоро мы с вами свяжемся","Успещно");
-                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                    dialog.show();
-                    Window window=dialog.getWindow();
-                    window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
-                }
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if(requestCode==1)
+//        {
+//            if(resultCode==Activity.RESULT_OK)
+//            {
+//                int res=data.getIntExtra("result",0);
+//                if(res==1)
+//                {
+//
+//                    DialogCustom dialog= new DialogCustom(BanksShow.this,"Ваш вопрос принят,скоро мы с вами свяжемся","Успещно");
+//                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                    dialog.show();
+//                    Window window=dialog.getWindow();
+//                    window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+//                }
+//            }
+//        }
+//    }
 }

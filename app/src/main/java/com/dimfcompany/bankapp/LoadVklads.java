@@ -45,12 +45,13 @@ public class LoadVklads
                 } catch (JSONException e)
                 {
                     PageViewActivity.sd.dismiss();
-                    Activity activity=(Activity)ctx;
-                    DialogCustom dialog= new DialogCustom(activity,"Ошибка чтения данных,повторите запрос позже.");
-                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                    dialog.show();
-                    Window window=dialog.getWindow();
-                    window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+                    PageViewActivity.ShowToast(ctx,"Ошибка чтения данных,повторите запрос позже.");
+//                    Activity activity=(Activity)ctx;
+//                    DialogCustom dialog= new DialogCustom(activity,"Ошибка чтения данных,повторите запрос позже.");
+//                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                    dialog.show();
+//                    Window window=dialog.getWindow();
+//                    window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
 
                 }
                 int count = 0;
@@ -89,12 +90,13 @@ public class LoadVklads
                     } catch (JSONException e)
                     {
                         PageViewActivity.sd.dismiss();
-                        Activity activity=(Activity)ctx;
-                        DialogCustom dialog= new DialogCustom(activity,"Ошибка чтения данных,повторите зпарос позже.");
-                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                        dialog.show();
-                        Window window=dialog.getWindow();
-                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+                        PageViewActivity.ShowToast(ctx,"Ошибка чтения данных,повторите запрос позже.");
+//                        Activity activity=(Activity)ctx;
+//                        DialogCustom dialog= new DialogCustom(activity,"Ошибка чтения данных,повторите зпарос позже.");
+//                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                        dialog.show();
+//                        Window window=dialog.getWindow();
+//                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
                     }
 
                 }
@@ -115,17 +117,18 @@ public class LoadVklads
                     public void run()
                     {
                         PageViewActivity.sd.dismiss();
-                        Activity activity=(Activity)ctx;
-                        DialogCustom dialog= new DialogCustom(activity);
-                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                        dialog.show();
-                        Window window=dialog.getWindow();
-                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+                        PageViewActivity.ShowToast(ctx,"Отсутсвует соединение с сетью,проверьте настройки устройства.");
+//                        Activity activity=(Activity)ctx;
+//                        DialogCustom dialog= new DialogCustom(activity);
+//                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                        dialog.show();
+//                        Window window=dialog.getWindow();
+//                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
                     }
                 }, 450);
 
 
-                //Toast.makeText(ctx, "Cant connect error", Toast.LENGTH_SHORT).show();
+
             }
         };
     //endregion

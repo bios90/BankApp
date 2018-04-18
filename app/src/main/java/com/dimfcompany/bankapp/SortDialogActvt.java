@@ -189,10 +189,20 @@ public class SortDialogActvt extends AppCompatActivity
                     public void onRequestFinished(Request request)
                     {
                         vkladsSorted=LoadVklads.vkladList;
-                        Intent loadShow = new Intent(SortDialogActvt.this,BanksShow.class);
-                        loadShow.putExtra("title",11);
-                        loadShow.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(loadShow);
+                        if(vkladsSorted.size()==0)
+                        {
+                            finish();
+//                            Intent loadStart= new Intent(SortDialogActvt.this,PageViewActivity.class);
+//                            loadStart.putExtra("error",1);
+//                            loadStart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                            startActivity(loadStart);
+                        }
+                        else{
+                            Intent loadShow = new Intent(SortDialogActvt.this, BanksShow.class);
+                            loadShow.putExtra("title", 11);
+                            loadShow.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(loadShow);
+                            }
 
                     }
                 };

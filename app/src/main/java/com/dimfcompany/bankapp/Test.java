@@ -45,13 +45,13 @@ public class Test extends AppCompatActivity {
                 switch (v.getId())
                 {
                     case R.id.button2:
-                        Toast.makeText(v.getContext(),bankList.get(0).getName().toString(),Toast.LENGTH_SHORT).show();
+
                         break;
                     case R.id.button3:
-                        Toast.makeText(v.getContext(),bankList.get(1).getPhone().toString(),Toast.LENGTH_SHORT).show();
+
                         break;
                     case R.id.button4:
-                        Toast.makeText(v.getContext(),bankList.get(2).getAdress().toString(),Toast.LENGTH_SHORT).show();
+
                         break;
                 }
 

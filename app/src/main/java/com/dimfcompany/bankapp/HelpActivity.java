@@ -92,6 +92,10 @@ public class HelpActivity extends AppCompatActivity {
                     finish();
 
                 }
+                else
+                    {
+                        PageViewActivity.ShowToast(HelpActivity.this,"Заполните обязательные поля : Имя, Фамилия, Телефон.");
+                    }
         }
         });
     }

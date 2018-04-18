@@ -62,15 +62,37 @@ public class AdapterCards extends RecyclerView.Adapter<AdapterCards.CardItemVH> 
 
         if(card.getRubLimit()!=0)
         {
-            holder.limit.setText(StringRight(card.getRubLimit())+" ₽");
+            if(card.getRubLimit()!=9999999)
+            {
+                holder.limit.setText(StringRight(card.getRubLimit()) + " ₽");
+            }
+            else
+                {
+                    holder.limit.setText("индивидуально");
+                }
         }
         else if(card.getDolLimit()!=0)
         {
-            holder.limit.setText(StringRight(card.getDolLimit())+" $");
+            if (card.getDolLimit()!=9999999)
+            {
+                holder.limit.setText(StringRight(card.getDolLimit()) + " $");
+            }
+            else
+                {
+                    holder.limit.setText("индивидуально");
+                }
         }
         else if(card.getEuroLimit()!=0)
         {
-            holder.limit.setText(StringRight(card.getEuroLimit())+" €");
+            if(card.getEuroLimit()!=9999999)
+            {
+                holder.limit.setText(StringRight(card.getEuroLimit()) + " €");
+            }
+            else
+            {
+                holder.limit.setText("индивидуально");
+            }
+
         }
 
         if(card.getLgotSrok()!=0)

@@ -40,15 +40,44 @@
         android:layout_height="2dp"
         android:background="@color/orange" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recView"
+    <RelativeLayout
+        android:layout_weight="9"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="9">
+        android:layout_height="0dp">
 
-    </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+
+            android:scrollbarSize="6dp"
+            android:id="@+id/recView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="9">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <com.turingtechnologies.materialscrollbar.TouchScrollBar
+            android:id="@+id/dragScrollBar"
+            android:layout_width="wrap_content"
+
+            app:msb_hideDelayInMilliseconds="50"
+            app:msb_handleOffColour="@color/orangeTrans"
+            app:msb_handleColour="@color/orange"
+            app:msb_recyclerView="@id/recView"
+            app:msb_lightOnTouch="true"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+
+
+
+
+
 
     <View
+
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/header2" />

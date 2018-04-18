@@ -106,15 +106,23 @@ public class FragCredit extends Fragment
             {
                 if(progress<=17)
                 {
+                    currentSum=progress;
                     int prog=(--progress*25000)+100000;
-                    currentSum=prog;
+                    if(currentSum==1)
+                    {
+                        currentSum=0;
+                    }
+                    else {
+                        currentSum = prog;
+                    }
                     String textToset = String.valueOf(prog);
                     String first = textToset.substring(0,3);
                     String second = textToset.substring(3,6);
                     String myString = first+" "+second;
-                creditSum.setText(myString);
+                    creditSum.setText(myString);
                 return;
                 }
+
                 if((progress>17)&&(progress<49))
                 {
                     int prog=(--progress*50000)-350000;
@@ -153,6 +161,7 @@ public class FragCredit extends Fragment
                     return;
 
                 }
+
             }
 
 
@@ -339,11 +348,12 @@ public class FragCredit extends Fragment
                                     public void run()
                                     {
                                         sdstatic.dismiss();
-                                        DialogCustom dialog= new DialogCustom(getActivity(),"По вашему запросу кредиты не найдены,попробуйте изменить запрос.");
-                                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                        dialog.show();
-                                        Window window=dialog.getWindow();
-                                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+                                        PageViewActivity.ShowToast(getContext(),"По вашему запросу кредиты не найдены,попробуйте изменить запрос.");
+//                                        DialogCustom dialog= new DialogCustom(getActivity(),"По вашему запросу кредиты не найдены,попробуйте изменить запрос.");
+//                                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                                        dialog.show();
+//                                        Window window=dialog.getWindow();
+//                                        window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
 
                                     }
                                 }, 600);
@@ -362,13 +372,14 @@ public class FragCredit extends Fragment
     {
         String query = "Select * from `credit` where";
         int sum =currentSum;
+
         int srok;
-        String sumplus=" (`rubsymmacredit` >="+sum+" or `dolsymmacredit` >="+sum/65+" or `eurosymmacredit` >="+sum/75+")";
+        String sumplus=" (`rubsymmacredit` >="+sum+" or `dolsymmacredit` >="+(int)sum/65+" or `eurosymmacredit` >="+(int)sum/75+")";
         query+=sumplus;
 
-        if (currentSrok==1)
+        if (currentSrok==1 || currentSrok==0)
         {
-            srok=12;
+            srok=10;
         }
         else if(currentSrok==2)
         {

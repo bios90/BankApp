@@ -150,7 +150,7 @@ public class SortCredit extends AppCompatActivity {
             {
                 creditsToSort=new ArrayList<>();
                 creditsToSort=BanksShow.currentCredits;
-                int firstid = creditsToSort.get(0).getId();
+                final int firstid = creditsToSort.get(0).getId();
                 String query = "Select * from credit where (`id`="+firstid;
                 for(ModelCredit credit : creditsToSort)
                 {
@@ -183,11 +183,22 @@ public class SortCredit extends AppCompatActivity {
                     @Override
                     public void onRequestFinished(Request request)
                     {
-                        creditsSorted=LoadCredit.credits;
-                        Intent loadShow = new Intent(SortCredit.this,BanksShow.class);
-                        loadShow.putExtra("title",22);
-                        loadShow.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(loadShow);
+                        creditsSorted = LoadCredit.credits;
+                        if (creditsSorted.size()==0)
+                        {
+                            finish();
+//                            Intent loadStart= new Intent(SortCredit.this,PageViewActivity.class);
+//                            loadStart.putExtra("error",1);
+//                            loadStart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                            startActivity(loadStart);
+                        }
+                        else
+                            {
+                            Intent loadShow = new Intent(SortCredit.this, BanksShow.class);
+                            loadShow.putExtra("title", 22);
+                            loadShow.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(loadShow);
+                            }
 
                     }
                 };

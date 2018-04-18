@@ -49,7 +49,7 @@ public class DetailsVklad extends AppCompatActivity {
         //endregion
 
         ModelVklad vklad = BanksShow.currentVklads.get(num);
-        Toast.makeText(DetailsVklad.this,String.valueOf(vklad.getDolsrok()),Toast.LENGTH_SHORT).show();
+
 
         name.setText(vklad.getName());
         bankname.setText(vklad.getBankName());

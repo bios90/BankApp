@@ -194,7 +194,6 @@ public class DetailsCredit extends AppCompatActivity
         }
         else rightSrok=String.valueOf(srok) + " месяцев";
 
-        Toast.makeText(this,String.valueOf(rightSrok),Toast.LENGTH_SHORT).show();
         return rightSrok;
     }
 
