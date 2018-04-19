@@ -71,10 +71,10 @@
             </LinearLayout>
 
             <ImageView
+                android:background=""
                 android:layout_gravity="center"
                 android:layout_marginRight="6dp"
                 android:layout_marginLeft="6dp"
-                android:scaleType=""
                 android:layout_weight="0"
                 android:src="@drawable/sberbank_135x85"
                 android:layout_width="110dp"
