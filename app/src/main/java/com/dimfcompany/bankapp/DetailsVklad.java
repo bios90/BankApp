@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,8 +24,8 @@ public class DetailsVklad extends AppCompatActivity {
         setContentView(R.layout.activity_vklad_details);
 
         Intent intent = getIntent();
-        int num=intent.getIntExtra("position",0);
-
+        int num=intent.getIntExtra("position",9999);
+        int numTwo=intent.getIntExtra("positionBF",9999);
         //region Inizialition
         name=(TextView)findViewById(R.id.vkladInfoName);
         bankname=(TextView)findViewById(R.id.vkladInfoBank);
@@ -48,7 +49,15 @@ public class DetailsVklad extends AppCompatActivity {
         euroLA=(LinearLayout)findViewById(R.id.vkladEuroLA);
         //endregion
 
-        ModelVklad vklad = BanksShow.currentVklads.get(num);
+        ModelVklad vklad=new ModelVklad();
+        if(num!=9999)
+        {
+            vklad = BanksShow.currentVklads.get(num);
+        }
+        else if(numTwo!=9999)
+        {
+            vklad= BankFullActvt.vklads.get(numTwo);
+        }
 
 
         name.setText(vklad.getName());

@@ -45,7 +45,7 @@ public class AdapterVklad extends RecyclerView.Adapter<AdapterVklad.VkladItemVH>
     @Override
     public void onBindViewHolder(final VkladItemVH holder, final int position)
     {
-        ModelVklad vklad = vklads.get(position);
+        final ModelVklad vklad = vklads.get(position);
 
         holder.name.setText(vklad.getName());
         holder.bankname.setText(vklad.getBankName());
@@ -60,6 +60,16 @@ public class AdapterVklad extends RecyclerView.Adapter<AdapterVklad.VkladItemVH>
 
         Picasso.get().load(vklad.getLogo()).error(ctx.getResources().getDrawable(R.drawable.logodefault)).into(holder.logo);
 
+        holder.logo.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(ctx,BankFullActvt.class);
+                intent.putExtra("id_bank",vklad.getBank_id());
+                ctx.startActivity(intent);
+            }
+        });
         holder.vkladCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)

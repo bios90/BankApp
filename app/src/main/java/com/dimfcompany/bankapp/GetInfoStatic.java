@@ -1,8 +1,6 @@
 package com.dimfcompany.bankapp;
 
 import android.content.Context;
-import android.content.Intent;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,8 +17,8 @@ import java.util.List;
 
 public class GetInfoStatic {
 
-    static List<BankModel> bankList;
-    //static List<BankModel> bankswithminmaks;
+    static List<ModelBank> bankList;
+    //static List<ModelBank> bankswithminmaks;
     static RequestQueue.RequestFinishedListener finlis;
 
     public static void GetInfo(final String query, final Context ctx, final RequestQueue.RequestFinishedListener finlisener) {
@@ -42,7 +40,7 @@ public class GetInfoStatic {
                 while (count < jsonArray.length()) {
                     try {
                         JSONObject object = jsonArray.getJSONObject(count);
-                        BankModel newbank = new BankModel();
+                        ModelBank newbank = new ModelBank();
                         newbank.setId(object.getInt("Id"));
                         newbank.setName(object.getString("Name"));
                         newbank.setAdress(object.getString("Adress"));
@@ -100,11 +98,11 @@ public class GetInfoStatic {
 
 
     //region UploadMinmaxOld
-     /*   public static void UploadMinMax(final List<BankModel> banks, final Context ctx) {
+     /*   public static void UploadMinMax(final List<ModelBank> banks, final Context ctx) {
         List<Integer> neededid = new ArrayList<Integer>(banks.size());
 
         //region forming query string
-        for (BankModel bank : banks) {
+        for (ModelBank bank : banks) {
             int i = bank.getId();
             neededid.add(i);
         }

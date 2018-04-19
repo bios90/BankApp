@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:background="@drawable/prod_item_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/productItemLayout"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/productItemName"
+            android:textAlignment="textStart"
+            android:paddingLeft="6dp"
+            android:textSize="16dp"
+            android:textColor="@color/header2"
+            android:layout_weight="10"
+            android:text="Вкалад апупенный"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/productItemRubImg"
+
+                android:src="@drawable/roubleyes"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="18dp" />
+            <ImageView
+                android:id="@+id/productItemDolImg"
+
+                android:src="@drawable/dollaryes"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="18dp" />
+            <ImageView
+                android:id="@+id/productItemEuroImg"
+
+                android:src="@drawable/euroyes"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="18dp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/productItemStavka"
+
+            android:fontFamily="@font/museosanscyrl_700"
+            android:textAlignment="center"
+            android:paddingLeft="6dp"
+            android:textSize="16dp"
+            android:textColor="@color/orange"
+            android:layout_weight="6"
+            android:text="до 7%"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

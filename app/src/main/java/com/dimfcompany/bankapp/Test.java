@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,7 +20,7 @@ public class Test extends AppCompatActivity {
     TextView[] texts;
     DatabaseReference Banks;
     String newName;
-    List<BankModel> bankList;
+    List<ModelBank> bankList;
 
     Button btn1,btn2,btn3;
 
@@ -77,7 +76,7 @@ public class Test extends AppCompatActivity {
                    String phone = child.child("phone").getValue(String.class);
                    String site = child.child("site").getValue(String.class);
 
-                   BankModel newbank = new BankModel();
+                   ModelBank newbank = new ModelBank();
 
                    newbank.setName(bankName);
                    newbank.setAdress(adress);

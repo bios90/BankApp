@@ -2,7 +2,7 @@ package com.dimfcompany.bankapp;
 
 
 
-public class BankModel
+public class ModelBank
 {
     private String name;
     private String logo;
@@ -15,21 +15,22 @@ public class BankModel
 
     private double[] minmax = new double[9];
 
-    public BankModel() {
+    //region Constructors
+    public ModelBank() {
     }
 
-    public BankModel(String name) {
+    public ModelBank(String name) {
         this.name = name;
     }
 
-    public BankModel(String name, String logo, String adress, String phone, String site, String[] vkladVrubl, String[] vkladVdollar, String[] credCardRubl) {
+    public ModelBank(String name, String logo, String adress, String phone, String site, String[] vkladVrubl, String[] vkladVdollar, String[] credCardRubl) {
         this.name = name;
         this.logo = logo;
         this.adress = adress;
         this.phone = phone;
         this.site = site;
-
     }
+    //endregion
 
     public double[] getMinmax() {
         return minmax;

@@ -15,14 +15,14 @@ import java.util.List;
 public class BankListAdapter extends RecyclerView.Adapter<BankListAdapter.BankItemViewHolder>
 {
     Context ctx;
-    List<BankModel> listToShow;
+    List<ModelBank> listToShow;
 
     public BankListAdapter()
     {
 
     }
 
-    public BankListAdapter(Context ctx, List<BankModel> listToShow) {
+    public BankListAdapter(Context ctx, List<ModelBank> listToShow) {
         this.ctx = ctx;
         this.listToShow = listToShow;
     }
@@ -39,7 +39,7 @@ public class BankListAdapter extends RecyclerView.Adapter<BankListAdapter.BankIt
     @Override
     public void onBindViewHolder(BankItemViewHolder holder, int position)
     {
-        BankModel bank = listToShow.get(position);
+        ModelBank bank = listToShow.get(position);
 
         //String[] vklads = bank.getVkladVrubl();
         //String[] crdits = bank.getCredCardRubl();

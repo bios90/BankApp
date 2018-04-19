@@ -1,12 +1,8 @@
 package com.dimfcompany.bankapp;
 
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -16,7 +12,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -24,7 +19,6 @@ import android.widget.CheckBox;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -65,10 +59,10 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
     IndicatorSeekBar procentSeek,distSeek;
     TextView procentTV,distTV;
 
-    List<BankModel> bankList;
+    List<ModelBank> bankList;
     public static List<ModelVklad> vkladList;
 
-    public static List<BankModel> staticBanks;
+    public static List<ModelBank> staticBanks;
 
     FirebaseDatabase db;
     DatabaseReference banksRef;
@@ -215,7 +209,7 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
             {
                 for(DataSnapshot bank : dataSnapshot.getChildren())
                 {
-                    BankModel newBank = new BankModel();
+                    ModelBank newBank = new ModelBank();
 
                     newBank.setName(bank.child("name").getValue(String.class));
                     newBank.setAdress(bank.child("adress").getValue(String.class));
@@ -275,7 +269,7 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
                     try
                     {
                         JSONObject object=jsonArray.getJSONObject(count);
-                        BankModel newbank = new BankModel();
+                        ModelBank newbank = new ModelBank();
                         newbank.setId(object.getInt("Id"));
                         newbank.setName(object.getString("Name"));
                         newbank.setAdress(object.getString("Adress"));
