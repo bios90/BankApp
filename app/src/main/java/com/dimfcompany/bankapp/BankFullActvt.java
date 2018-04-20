@@ -504,13 +504,14 @@ public class BankFullActvt extends AppCompatActivity
             adapterCredit=new AdapterBFIcredit(BankFullActvt.this,credits);
             recVCredits.setHasFixedSize(true);
             recVCredits.setAdapter(adapterCredit);
+            recVCredits.setNestedScrollingEnabled(false);
         }else
         {
-            btnCredit.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
-            btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
-            btnCredit.setEnabled(false);
-            expandCredit.setEnabled(false);
-            btnCredit.setTextColor(getResources().getColor(R.color.header2));
+//            btnCredit.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
+//            btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
+//            btnCredit.setEnabled(false);
+//            expandCredit.setEnabled(false);
+//            btnCredit.setTextColor(getResources().getColor(R.color.header2));
 
             btnCredit.setVisibility(View.GONE);
         }
@@ -523,14 +524,15 @@ public class BankFullActvt extends AppCompatActivity
             adapterVklad=new AdapterBFIvklads(BankFullActvt.this,vklads,1);
             BFrecVVklads.setHasFixedSize(true);
             BFrecVVklads.setAdapter(adapterVklad);
+            BFrecVVklads.setNestedScrollingEnabled(false);
         }
         else
             {
-                btnVklad.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
-                btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
-                btnVklad.setEnabled(false);
-                expandVklad.setEnabled(false);
-                btnVklad.setTextColor(getResources().getColor(R.color.header2));
+//                btnVklad.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
+//                btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
+//                btnVklad.setEnabled(false);
+//                expandVklad.setEnabled(false);
+//                btnVklad.setTextColor(getResources().getColor(R.color.header2));
 
                 btnVklad.setVisibility(View.GONE);
             }
@@ -543,14 +545,15 @@ public class BankFullActvt extends AppCompatActivity
             adapterCard=new AdapterBFIcards(BankFullActvt.this,cards);
             recVCards.setHasFixedSize(true);
             recVCards.setAdapter(adapterCard);
+            recVCards.setNestedScrollingEnabled(false);
         }
         else
         {
-            btnCard.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
-            btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
-            btnCard.setEnabled(false);
-            expandCard.setEnabled(false);
-            btnCard.setTextColor(getResources().getColor(R.color.header2));
+//            btnCard.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
+//            btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
+//            btnCard.setEnabled(false);
+//            expandCard.setEnabled(false);
+//            btnCard.setTextColor(getResources().getColor(R.color.header2));
 
             btnCard.setVisibility(View.GONE);
         }

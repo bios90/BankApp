@@ -7,18 +7,22 @@
     <color name="header2trans">#99212121</color>
     <color name="header2trans2">#1af7811d</color>
     <color name="header">#34495e</color>
-    <color name="header2">#212121</color>
+    <color name="header2">#514593</color>
     <color name="headerBG">#1d2834</color>
     <color name="headerBG2">#161616</color>
     <color name="orangeTrans">#99f7811d</color>
-    <color name="orange">#f7811d</color>
-    <color name="myWhite">#f6f6f6</color>
-    <color name="myGray">#a8a9ae</color>
+    <color name="orange">#4bcbd4</color>
+    <color name="myWhite">#2c528a</color>
+    <color name="myGray">#faf5f1</color>
     <color name="miuiOrange">#ef6a0d</color>
     <color name="miuiDarkGray">#2a292f</color>
     <color name="miuiMiddleGray">#38373d</color>
     <color name="miuiLightGray">#99999b</color>
     <color name="miuiWhite">#ededef</color>
     <color name="myWhite2">#f8f8ff</color>
+    <color name="orangeOld">#f7811d</color>
+    <color name="header2Old">#212121</color>
+    <color name="myWhiteOld">#f6f6f6</color>
+    <color name="myGrayOld">#a8a9ae</color>
 
 </resources>

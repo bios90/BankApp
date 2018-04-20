@@ -4,6 +4,6 @@
         android:width="2dp"
         android:color="@color/header2" />
 
-    <solid android:color="@color/orange" />
+    <!--solid android:color="@color/orange" /-->
 
 </shape>
