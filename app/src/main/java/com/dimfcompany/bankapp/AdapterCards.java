@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ public class AdapterCards extends RecyclerView.Adapter<AdapterCards.CardItemVH> 
     @Override
     public void onBindViewHolder(CardItemVH holder,final int position)
     {
-        ModelCard card = cards.get(position);
+        final ModelCard card = cards.get(position);
 
         holder.name.setText(card.getName());
         holder.bankname.setText(card.getBankName());
@@ -136,6 +137,18 @@ public class AdapterCards extends RecyclerView.Adapter<AdapterCards.CardItemVH> 
         else holder.euro.setImageDrawable(ctx.getResources().getDrawable(R.drawable.eurono));
 
         Picasso.get().load(card.getLogo()).error(ctx.getResources().getDrawable(R.drawable.logodefault)).into(holder.bankImg);
+
+        holder.bankImg.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Log.e("BANKKKK",card.getId_bank()+"");
+                Intent intent = new Intent(ctx,BankFullActvt.class);
+                intent.putExtra("id_bank",card.getId_bank());
+                ctx.startActivity(intent);
+            }
+        });
 
         holder.cardCV.setOnClickListener(new View.OnClickListener() {
             @Override

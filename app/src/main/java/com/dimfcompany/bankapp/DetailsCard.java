@@ -27,7 +27,8 @@ public class DetailsCard extends AppCompatActivity
         setContentView(R.layout.activity_details_card);
 
         Intent intent = getIntent();
-        int num=intent.getIntExtra("position",0);
+        int num=intent.getIntExtra("position",9999);
+        int numTwo=intent.getIntExtra("positionBF",9999);
 
         //region Inizialization
         name=(TextView)findViewById(R.id.cardName);
@@ -68,9 +69,17 @@ public class DetailsCard extends AppCompatActivity
         );
         //endregion
 
-        ModelCard card= BanksShow.currentCards.get(num);
+        ModelCard card= new ModelCard();//BanksShow.currentCards.get(num);
 
-        Log.e("test!!!!",String.valueOf(card.getBesplatnoeO()));
+        if(num!=9999)
+        {
+            card = BanksShow.currentCards.get(num);
+        }
+        else if(numTwo!=9999)
+        {
+            card= BankFullActvt.cards.get(numTwo);
+        }
+
 
         name.setText(card.getName());
         bankName.setText(card.getBankName());

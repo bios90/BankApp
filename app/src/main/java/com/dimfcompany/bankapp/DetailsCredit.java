@@ -27,7 +27,8 @@ public class DetailsCredit extends AppCompatActivity
         setContentView(R.layout.activity_details_credit);
 
         Intent intent = getIntent();
-        int num=intent.getIntExtra("position",0);
+        int num=intent.getIntExtra("position",9999);
+        int numTwo=intent.getIntExtra("positionBF",9999);
 
         //region Inizialization
         creditName=(TextView)findViewById(R.id.creditInfoName);
@@ -54,7 +55,16 @@ public class DetailsCredit extends AppCompatActivity
         dolLA=(LinearLayout)findViewById(R.id.creditDolLayout);
         //endregion
 
-        ModelCredit credit= BanksShow.currentCredits.get(num);
+        ModelCredit credit=new ModelCredit();// BanksShow.currentCredits.get(num);
+
+        if(num!=9999)
+        {
+            credit = BanksShow.currentCredits.get(num);
+        }
+        else if(numTwo!=9999)
+        {
+            credit= BankFullActvt.credits.get(numTwo);
+        }
 
         creditName.setText(credit.getName());
         creditBankName.setText(credit.getBankName());

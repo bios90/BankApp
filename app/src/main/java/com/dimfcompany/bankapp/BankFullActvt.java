@@ -3,6 +3,7 @@ package com.dimfcompany.bankapp;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,10 +11,11 @@ import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,9 +26,13 @@ import net.cachapa.expandablelayout.ExpandableLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import dmax.dialog.SpotsDialog;
+
 public class BankFullActvt extends AppCompatActivity
 {
     ModelBank bank;
+
+    SpotsDialog sd;
 
     static List<ModelVklad> vklads;
     static List<ModelCard> cards;
@@ -46,12 +52,13 @@ public class BankFullActvt extends AppCompatActivity
     Drawable arrowHeader;
     Drawable arrowOrange;
 
-    Button btnVklad,btnCard,btnCredit;
+    ToggleButton btnVklad,btnCard,btnCredit;
 
     RecyclerView BFrecVVklads,recVCards,recVCredits;
 
-    AdapterBFIvklads adapterVklad,adapterVkladTwo;
+    AdapterBFIvklads adapterVklad;
     AdapterBFIcards adapterCard;
+    AdapterBFIcredit adapterCredit;
 
     ExpandableLayout expandVklad,expandCard,expandCredit;
 
@@ -66,6 +73,9 @@ public class BankFullActvt extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank_full_actvt);
 
+
+
+        //region Inizialization Colors && RecViews
         header2=new ColorDrawable(0xFF212121);
         orange=new ColorDrawable(0xFFf7811d);
 
@@ -79,105 +89,13 @@ public class BankFullActvt extends AppCompatActivity
         recVCards=(RecyclerView)findViewById(R.id.BFrecVCards);
         recVCredits=(RecyclerView)findViewById(R.id.BFrecVCredit);
 
-
         BFrecVVklads.setLayoutManager(new LinearLayoutManager(this));
-
         recVCredits.setLayoutManager(new LinearLayoutManager(this));
-
-        //region Buttons
-        btnVklad=(Button)findViewById(R.id.btnVklad);
-        btnCard=(Button)findViewById(R.id.btnCard);
-        btnCredit=(Button)findViewById(R.id.btnCredit);
-
-        btnCredit.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                int color = Color.TRANSPARENT;
-                Drawable background = btnCredit.getBackground();
-
-                if (background instanceof ColorDrawable)
-                    color = ((ColorDrawable)background).getColor();
-
-
-                switch (color)
-                {
-                    case -556771:
-                        btnCredit.setBackground(header2);
-                        btnCredit.setTextColor(orangeint);
-                        btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
-                        break;
-                    case -14606047:
-                        btnCredit.setBackground(orange);
-                        btnCredit.setTextColor(headerint);
-                        btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
-                        break;
-                }
-            }
-        });
-
-        btnCard.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                int color = Color.TRANSPARENT;
-                Drawable background = btnCard.getBackground();
-
-                if (background instanceof ColorDrawable)
-                    color = ((ColorDrawable)background).getColor();
-
-
-                switch (color)
-                {
-                    case -556771:
-                        btnCard.setBackground(header2);
-                        btnCard.setTextColor(orangeint);
-                        btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
-                        break;
-                    case -14606047:
-                        btnCard.setBackground(orange);
-                        btnCard.setTextColor(headerint);
-                        btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
-                        break;
-                }
-            }
-        });
-
-        btnVklad.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                int color = Color.TRANSPARENT;
-                Drawable background = btnVklad.getBackground();
-
-                if (background instanceof ColorDrawable)
-                    color = ((ColorDrawable)background).getColor();
-
-                Log.e("!!!!!COLOR!!!!!",color+"");
-
-                switch (color)
-                {
-                    case -556771:
-                        btnVklad.setBackground(header2);
-                        btnVklad.setTextColor(orangeint);
-                        btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
-                        break;
-                    case -14606047:
-                        btnVklad.setBackground(orange);
-                        btnVklad.setTextColor(headerint);
-                        btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
-                        break;
-                }
-
-                expandVklad.toggle();
-            }
-        });
-        //endregion
+        recVCards.setLayoutManager(new LinearLayoutManager(this));
 
         expandVklad=(ExpandableLayout)findViewById(R.id.expandLAVklad);
+        expandCard=(ExpandableLayout)findViewById(R.id.expandLACard);
+        expandCredit=(ExpandableLayout)findViewById(R.id.expandLACredit);
 
         rubYes=getResources().getDrawable(R.drawable.roubleyes);
         rubNo=getResources().getDrawable(R.drawable.roubleno);
@@ -186,7 +104,173 @@ public class BankFullActvt extends AppCompatActivity
         euroYes=getResources().getDrawable(R.drawable.euroyes);
         euroNo=getResources().getDrawable(R.drawable.eurono);
 
+        //endregion
+        //region Buttons
+        btnVklad=(ToggleButton)findViewById(R.id.btnVklad);
+        btnCard=(ToggleButton)findViewById(R.id.btnCard);
+        btnCredit=(ToggleButton)findViewById(R.id.btnCredit);
+
+        btnCredit.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(btnCredit.isChecked())
+                {
+                    btnCredit.setTextColor(headerint);
+                    btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
+                }
+                else
+                    {
+                        btnCredit.setTextColor(orangeint);
+                        btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
+                    }
+
+                boolean others=(expandVklad.isExpanded() || expandCard.isExpanded());
+
+                if(expandVklad.isExpanded())btnVklad.performClick();
+                if(expandCard.isExpanded())btnCard.performClick();
+                expandVklad.collapse(true);
+                expandCard.collapse(true);
+
+                if(others==true)
+                {
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+
+                            expandCredit.toggle();
+
+                        }
+                    }, 460);
+                }else
+                    {
+                        expandCredit.toggle();
+                    }
+
+            }
+        });
+
+        btnCard.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(btnCard.isChecked())
+                {
+                    btnCard.setTextColor(headerint);
+                    btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
+                }
+                else
+                {
+                    btnCard.setTextColor(orangeint);
+                    btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
+                }
+
+                boolean others=(expandVklad.isExpanded() || expandCredit.isExpanded());
+
+                if(expandVklad.isExpanded())btnVklad.performClick();
+                if(expandCredit.isExpanded())btnCredit.performClick();
+                expandVklad.collapse(true);
+                expandCredit.collapse(true);
+
+                if(others==true)
+                {
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+
+                            expandCard.toggle();
+
+                        }
+                    }, 460);
+                }else
+                {
+                    expandCard.toggle();
+                }
+
+            }
+        });
+
+        btnVklad.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                if(btnVklad.isChecked())
+                {
+                    btnVklad.setTextColor(headerint);
+                    btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
+                }
+                else
+                {
+                    btnVklad.setTextColor(orangeint);
+                    btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
+                }
+                //region OldColorsCheck
+//                int color = Color.TRANSPARENT;
+//                Drawable background = btnVklad.getBackground();
+//
+//                if (background instanceof ColorDrawable)
+//                    color = ((ColorDrawable)background).getColor();
+//
+//
+//                switch (color)
+//                {
+//                    case -556771:
+//                        btnVklad.setBackground(header2);
+//                        btnVklad.setTextColor(orangeint);
+//                        btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
+//                        break;
+//                    case -14606047:
+//                        btnVklad.setBackground(orange);
+//                        btnVklad.setTextColor(headerint);
+//                        btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
+//                        break;
+//                }
+                //endregion
+
+                boolean others=(expandCard.isExpanded() || expandCredit.isExpanded());
+
+                if(expandCard.isExpanded())btnCard.performClick();
+                if(expandCredit.isExpanded())btnCredit.performClick();
+                expandCard.collapse(true);
+                expandCredit.collapse(true);
+
+                if(others==true)
+                {
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+
+                            expandVklad.toggle();
+
+                        }
+                    }, 460);
+                }else
+                {
+                    expandVklad.toggle();
+                }
+            }
+        });
+        //endregion
+
+
         id_bank = getIntent().getIntExtra("id_bank",0);
+
+
+        sd=new SpotsDialog(BankFullActvt.this, R.style.Custom);
+        sd.show();
 
         //region Inizialization
         vklads=new ArrayList<>();
@@ -254,13 +338,26 @@ public class BankFullActvt extends AppCompatActivity
                 credits=LoadAllBankProducts.credits;
 
                 MakeView();
-                LoadRecViews();
+                LoadCredist();
+                LoadVklads();
                 LoadCards();
+
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        sd.dismiss();
+                    }
+                }, 1200);
+
             }
         };
 
         LoadAllBankProducts.GetAallProducts(BankFullActvt.this,id_bank,finishedListener);
     }
+
 
 
 
@@ -282,6 +379,10 @@ public class BankFullActvt extends AppCompatActivity
 
         mmax=bank.getMinmax();
 
+        for (double d : mmax)
+        {
+            Log.e("mmmxxxxxx",d+"");
+        }
         if(vklads.size()!=0)
         {
             vkladR.setImageDrawable(mmax[0]==0.0?rubNo:rubYes);
@@ -300,9 +401,19 @@ public class BankFullActvt extends AppCompatActivity
             {
                 stavkaVklad.setText("до "+ mmax[2]+"%");
             }
+            else
+            {
+                vkladR.setImageDrawable(rubNo);
+                vkladD.setImageDrawable(dolNo);
+                vkladD.setImageDrawable(euroNo);
+                stavkaVklad.setText("--");
+            }
         }
         else
             {
+                vkladR.setImageDrawable(rubNo);
+                vkladD.setImageDrawable(dolNo);
+                vkladD.setImageDrawable(euroNo);
                 stavkaVklad.setText("--");
             }
 
@@ -324,9 +435,19 @@ public class BankFullActvt extends AppCompatActivity
             {
                 stavkaCard.setText("от "+ mmax[5]+"%");
             }
+            else
+                {
+                    cardR.setImageDrawable(rubNo);
+                    cardD.setImageDrawable(dolNo);
+                    cardE.setImageDrawable(euroNo);
+                    stavkaCard.setText("--");
+                }
         }
         else
             {
+                cardR.setImageDrawable(rubNo);
+                cardD.setImageDrawable(dolNo);
+                cardE.setImageDrawable(euroNo);
                 stavkaCard.setText("--");
             }
         if(credits.size()!=0)
@@ -337,25 +458,55 @@ public class BankFullActvt extends AppCompatActivity
 
             if(mmax[6]!=0.0)
             {
-                stavkaCard.setText("от "+ mmax[6]+"%");
+                stavkaCredit.setText("от "+ mmax[6]+"%");
             }
             else if(mmax[7]!=0.0)
             {
-                stavkaCard.setText("от "+ mmax[7]+"%");
+                stavkaCredit.setText("от "+ mmax[7]+"%");
             }
             else if(mmax[8]!=0.0)
             {
-                stavkaCard.setText("от "+ mmax[8]+"%");
+                stavkaCredit.setText("от "+ mmax[8]+"%");
+            }
+            else
+            {
+                creditR.setImageDrawable(rubNo);
+                creditD.setImageDrawable(dolNo);
+                creditE.setImageDrawable(euroNo);
+                stavkaCard.setText("--");
             }
         }
         else
         {
+            creditR.setImageDrawable(rubNo);
+            creditD.setImageDrawable(dolNo);
+            creditE.setImageDrawable(euroNo);
             stavkaCard.setText("--");
         }
     }
     //endregion
 
-    private void LoadRecViews()
+    //region LoadProductsByPArt
+    private void LoadCredist()
+    {
+        if(credits.size()!=0)
+        {
+            adapterCredit=new AdapterBFIcredit(BankFullActvt.this,credits);
+            recVCredits.setHasFixedSize(true);
+            recVCredits.setAdapter(adapterCredit);
+        }else
+        {
+            btnCredit.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
+            btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
+            btnCredit.setEnabled(false);
+            expandCredit.setEnabled(false);
+            btnCredit.setTextColor(getResources().getColor(R.color.header2));
+
+            btnCredit.setVisibility(View.GONE);
+        }
+    }
+
+    private void LoadVklads()
     {
         if(vklads.size()!=0)
         {
@@ -365,7 +516,13 @@ public class BankFullActvt extends AppCompatActivity
         }
         else
             {
+                btnVklad.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
+                btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
                 btnVklad.setEnabled(false);
+                expandVklad.setEnabled(false);
+                btnVklad.setTextColor(getResources().getColor(R.color.header2));
+
+                btnVklad.setVisibility(View.GONE);
             }
     }
 
@@ -373,24 +530,21 @@ public class BankFullActvt extends AppCompatActivity
     {
         if(cards.size()!=0)
         {
-            recVCards.setLayoutManager(new LinearLayoutManager(this));
             adapterCard=new AdapterBFIcards(BankFullActvt.this,cards);
             recVCards.setHasFixedSize(true);
             recVCards.setAdapter(adapterCard);
         }
         else
         {
+            btnCard.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
+            btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
             btnCard.setEnabled(false);
+            expandCard.setEnabled(false);
+            btnCard.setTextColor(getResources().getColor(R.color.header2));
+
+            btnCard.setVisibility(View.GONE);
         }
     }
+    //endregion
 
-    void LoadCredits()
-    {
-//        if(credits.size()!=0)
-//        {
-//            adapterCredit=new AdapterBFIvklads(BankFullActvt.this,credits,3);
-//            recVCredits.setHasFixedSize(true);
-//            recVCredits.setAdapter(adapterCredit);
-//        }
-    }
 }

@@ -1,5 +1,6 @@
 package com.dimfcompany.bankapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -41,7 +42,6 @@ public class AdapterBFIvklads extends RecyclerView.Adapter<AdapterBFIvklads.Bank
 
         listType=i;
 
-        PageViewActivity.ShowToast(ctx,listType+"");
         this.ctx=ctx;
 
         if(listType==1)

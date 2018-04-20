@@ -39,7 +39,7 @@ public class AdapterCredit extends RecyclerView.Adapter<AdapterCredit.CreditItem
     @Override
     public void onBindViewHolder(CreditItemVH holder,final int position)
     {
-        ModelCredit credit = credits.get(position);
+        final ModelCredit credit = credits.get(position);
 
         holder.name.setText(credit.getName());
         holder.bankname.setText(credit.getBankName());
@@ -85,6 +85,17 @@ public class AdapterCredit extends RecyclerView.Adapter<AdapterCredit.CreditItem
         else holder.euro.setImageDrawable(ctx.getResources().getDrawable(R.drawable.eurono));
 
         Picasso.get().load(credit.getLogo()).error(ctx.getResources().getDrawable(R.drawable.logodefault)).into(holder.bankImg);
+
+        holder.bankImg.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(ctx,BankFullActvt.class);
+                intent.putExtra("id_bank",credit.getBank_id());
+                ctx.startActivity(intent);
+            }
+        });
 
         holder.creditCV.setOnClickListener(new View.OnClickListener() {
             @Override

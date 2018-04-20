@@ -1,5 +1,6 @@
 package com.dimfcompany.bankapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
@@ -70,6 +71,7 @@ public class AdapterVklad extends RecyclerView.Adapter<AdapterVklad.VkladItemVH>
                 ctx.startActivity(intent);
             }
         });
+
         holder.vkladCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
