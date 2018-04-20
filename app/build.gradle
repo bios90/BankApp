@@ -29,6 +29,7 @@ dependencies {
     })
 
 
+    compile 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
     compile 'com.github.turing-tech:MaterialScrollBar:12.+'
     compile 'com.github.d-max:spots-dialog:0.7@aar'
     compile 'com.android.support:appcompat-v7:26.+'

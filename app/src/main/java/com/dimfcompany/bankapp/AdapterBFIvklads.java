@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
-public class AdapterBankProducts extends RecyclerView.Adapter<AdapterBankProducts.BankProductVH>
+public class AdapterBFIvklads extends RecyclerView.Adapter<AdapterBFIvklads.BankProductVH>
 {
     Context ctx;
     List<ModelVklad> vklads;
@@ -29,7 +29,7 @@ public class AdapterBankProducts extends RecyclerView.Adapter<AdapterBankProduct
     Drawable euroYes;
     Drawable euroNo;
 
-    public AdapterBankProducts(Context ctx,List<?> list,int i)
+    public AdapterBFIvklads(Context ctx, List<?> list, int i)
     {
 
         rubYes=ctx.getResources().getDrawable(R.drawable.roubleyes);
@@ -40,6 +40,8 @@ public class AdapterBankProducts extends RecyclerView.Adapter<AdapterBankProduct
         euroNo=ctx.getResources().getDrawable(R.drawable.eurono);
 
         listType=i;
+
+        PageViewActivity.ShowToast(ctx,listType+"");
         this.ctx=ctx;
 
         if(listType==1)
@@ -104,6 +106,83 @@ public class AdapterBankProducts extends RecyclerView.Adapter<AdapterBankProduct
                     ctx.startActivity(loadinfo);
                 }
             });
+
+            if(listType==2)
+            {
+                Log.e("!!!!TESET!!!!","2222type");
+                ModelCard card = cards.get(position);
+
+                holder.name.setText("FSDFDGdfg");
+                double stavkaDblDva=0;
+
+                if(card.getStavkaRub()!=0.0)
+                {
+                    stavkaDblDva=vklad.getStavkarub();
+                }
+                else if(card.getStavkaDol()!=0.0)
+                {
+                    stavkaDblDva=vklad.getStavkadol();
+                }
+                else if(card.getStavkaEuro()!=0.0)
+                {
+                    stavkaDblDva=vklad.getStavkaeuro();
+                }
+
+                holder.stavka.setText("от "+stavkaDblDva+"%");
+
+                holder.rub.setImageDrawable(card.getStavkaRub()!=0?rubYes:rubNo);
+                holder.dol.setImageDrawable(card.getStavkaDol()!=0?dolYes:dolNo);
+                holder.euro.setImageDrawable(card.getStavkaEuro()!=0?euroYes:euroNo);
+
+                holder.itemLA.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent loadinfo=new Intent(ctx,DetailsCard.class);
+                        loadinfo.putExtra("positionBF",position);
+                        ctx.startActivity(loadinfo);
+                    }
+                });
+            }
+
+            if(listType==3)
+            {
+                ModelCredit credit = credits.get(position);
+
+                holder.name.setText(credit.getName());
+                double stavkaDblDva=0;
+
+                if(credit.getStavkarubcredit()!=0.0)
+                {
+                    stavkaDblDva=credit.getStavkarubcredit();
+                }
+                else if(credit.getStavkadolcredit()!=0.0)
+                {
+                    stavkaDblDva=credit.getStavkadolcredit();
+                }
+                else if(credit.getStavkaeurocredit()!=0.0)
+                {
+                    stavkaDblDva=credit.getStavkaeurocredit();
+                }
+
+                holder.stavka.setText("от "+stavkaDblDva+"%");
+
+                holder.rub.setImageDrawable(credit.getStavkarubcredit()!=0?rubYes:rubNo);
+                holder.dol.setImageDrawable(credit.getStavkadolcredit()!=0?dolYes:dolNo);
+                holder.euro.setImageDrawable(credit.getStavkaeurocredit()!=0?euroYes:euroNo);
+
+                holder.itemLA.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent loadinfo=new Intent(ctx,DetailsCredit.class);
+                        loadinfo.putExtra("positionBF",position);
+                        ctx.startActivity(loadinfo);
+                    }
+                });
+            }
         }
     }
 
@@ -113,6 +192,14 @@ public class AdapterBankProducts extends RecyclerView.Adapter<AdapterBankProduct
         if(listType==1)
         {
             return vklads.size();
+        }
+        if(listType==2)
+        {
+            return cards.size();
+        }
+        if(listType==3)
+        {
+            return credits.size();
         }
         return 0;
     }
@@ -138,16 +225,4 @@ public class AdapterBankProducts extends RecyclerView.Adapter<AdapterBankProduct
             itemLA=itemView.findViewById(R.id.productItemLayout);
         }
     }
-
-//    public AdapterBankProducts(Context ctx,List<ModelCard> cards)
-//    {
-//        this.ctx=ctx;
-//        this.cards=cards;
-//    }
-
-//    public AdapterBankProducts(Context ctx,List<ModelCredit> credits)
-//    {
-//        this.ctx=ctx;
-//        this.credits=credits;
-//    }
 }

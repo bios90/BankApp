@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="background1">#f5f5f5</color>
     <color name="header2trans">#99212121</color>
+    <color name="header2trans2">#1af7811d</color>
     <color name="header">#34495e</color>
     <color name="header2">#212121</color>
     <color name="headerBG">#1d2834</color>
@@ -18,5 +19,6 @@
     <color name="miuiMiddleGray">#38373d</color>
     <color name="miuiLightGray">#99999b</color>
     <color name="miuiWhite">#ededef</color>
+    <color name="myWhite2">#f8f8ff</color>
 
 </resources>

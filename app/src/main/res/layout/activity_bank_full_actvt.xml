@@ -12,370 +12,498 @@
     <TextView
         android:id="@+id/BFbank_name"
 
-        android:fontFamily="@font/museosanscyrl_700"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:textColor="@color/orange"
-        android:textAlignment="center"
-        android:text="Сбербанк России"
-        android:background="@color/header2"
         android:layout_width="match_parent"
-        android:layout_height="56dp" />
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/header2"
+        android:fontFamily="@font/museosanscyrl_700"
+        android:gravity="center"
+        android:text="Сбербанк России"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        android:textSize="20dp" />
 
     <ScrollView
+        android:layout_weight="20"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
+        android:layout_height="0dp"
+        android:fillViewport="true">
 
         <LinearLayout
-
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
 
             <LinearLayout
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                android:orientation="vertical"
-                android:layout_weight="10"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-
-
-                <TextView
-                    android:id="@+id/BFbankAdress"
-
-                    android:fontFamily="@font/museosanscyrl_300"
-                    android:textSize="15dp"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="16dp"
-                    android:textColor="@color/header2"
-                    android:text="г. Москва, ул. Вавилова, д. 19"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <LinearLayout
 
 
-                <TextView
-                    android:id="@+id/BFbankSite"
-                    android:fontFamily="@font/museosanscyrl_500"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="16dp"
-                    android:textColor="@color/orange"
-                    android:text="www.sberbank.ru"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/BFbankPhone"
-                    android:fontFamily="@font/museosanscyrl_300"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="16dp"
-                    android:textColor="@color/header2"
-                    android:text="8 800 555-55-50"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/BFbankAdress"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:paddingLeft="16dp"
+                        android:text="г. Москва, ул. Вавилова, д. 19"
+                        android:textColor="@color/header2"
+                        android:textSize="15dp" />
+
+
+                    <TextView
+                        android:id="@+id/BFbankSite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/museosanscyrl_500"
+                        android:paddingLeft="16dp"
+                        android:text="www.sberbank.ru"
+                        android:textColor="@color/orange" />
+
+                    <TextView
+                        android:id="@+id/BFbankPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/museosanscyrl_300"
+                        android:paddingLeft="16dp"
+                        android:text="8 800 555-55-50"
+                        android:textColor="@color/header2" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/BFbankLogo"
+                    android:layout_width="110dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="0"
+                    android:src="@drawable/sberbank_135x85" />
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/BFbankLogo"
-                android:layout_gravity="center"
-                android:layout_marginRight="6dp"
-                android:layout_marginLeft="6dp"
-                android:layout_weight="0"
-                android:src="@drawable/sberbank_135x85"
-                android:layout_width="110dp"
-                android:layout_height="70dp" />
-
-        </LinearLayout>
-
-        <!--View
+            <!--View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/header2" /-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="4dp"
-            android:background="@color/myGray" />
-
-
-        <LinearLayout
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textSize="16dp"
-                android:textAlignment="center"
-                android:textColor="@color/header2"
-                android:layout_weight="10"
-                android:text="Вклады"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-
-            <LinearLayout
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_weight="4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/BFvkladRub"
-
-                    android:src="@drawable/roubleyes"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="18dp" />
-                <ImageView
-                    android:id="@+id/BFvkladDol"
-
-                    android:src="@drawable/dollarno"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="18dp" />
-                <ImageView
-                    android:id="@+id/BFvkladEuro"
-
-                    android:src="@drawable/eurono"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="18dp" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/BFvkladStavka"
-
-                android:textAlignment="center"
-                android:textSize="16dp"
-                android:textColor="@color/orange"
-                android:layout_weight="10"
-                android:text="до 8%"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:background="@color/myGray" />
-
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textSize="16dp"
-                android:textAlignment="center"
-                android:textColor="@color/header2"
-                android:layout_weight="10"
-                android:text="Карты"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/myGray" />
 
 
             <LinearLayout
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_weight="4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/BFcardRub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
 
-                    android:src="@drawable/roubleyes"
-                    android:layout_weight="1"
+                <TextView
                     android:layout_width="0dp"
-                    android:layout_height="18dp" />
-                <ImageView
-                    android:id="@+id/BFcardDol"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="Вклады"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
 
-                    android:src="@drawable/dollarno"
-                    android:layout_weight="1"
+                <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="18dp" />
-                <ImageView
-                    android:id="@+id/BFcardEuro"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
 
-                    android:src="@drawable/eurono"
-                    android:layout_weight="1"
+                    <ImageView
+                        android:id="@+id/BFvkladRub"
+
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/roubleyes" />
+
+                    <ImageView
+                        android:id="@+id/BFvkladDol"
+
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/dollarno" />
+
+                    <ImageView
+                        android:id="@+id/BFvkladEuro"
+
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/eurono" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/BFvkladStavka"
+
                     android:layout_width="0dp"
-                    android:layout_height="18dp" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="до 8%"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:textSize="16dp" />
+
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/BFcardStavka"
-
-                android:textAlignment="center"
-                android:textSize="16dp"
-                android:textColor="@color/orange"
-                android:layout_weight="10"
-                android:text="от 20%"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:background="@color/myGray" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textSize="16dp"
-                android:textAlignment="center"
-                android:textColor="@color/header2"
-                android:layout_weight="10"
-                android:text="Кредиты"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/myGray" />
 
 
             <LinearLayout
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_weight="4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/BFcreditRub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                    android:src="@drawable/roubleyes"
-                    android:layout_weight="1"
+                <TextView
                     android:layout_width="0dp"
-                    android:layout_height="18dp" />
-                <ImageView
-                    android:id="@+id/BFcreditDol"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="Карты"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
 
-                    android:src="@drawable/dollaryes"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="18dp" />
-                <ImageView
-                    android:id="@+id/BFcreditEuro"
 
-                    android:src="@drawable/euroyes"
-                    android:layout_weight="1"
+                <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="18dp" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/BFcardRub"
+
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/roubleyes" />
+
+                    <ImageView
+                        android:id="@+id/BFcardDol"
+
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/dollarno" />
+
+                    <ImageView
+                        android:id="@+id/BFcardEuro"
+
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/eurono" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/BFcardStavka"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="от 20%"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:textSize="16dp" />
+
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/BFcreditStavka"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/myGray" />
 
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:text="от 14%"
-                android:textAlignment="center"
-                android:textColor="@color/orange"
-                android:textSize="16dp" />
+                android:orientation="horizontal">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="Кредиты"
+                    android:textAlignment="center"
+                    android:textColor="@color/header2"
+                    android:textSize="16dp" />
 
-        <View
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/header2" />
 
-        <LinearLayout
-            android:layout_marginTop="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
 
-            <Button
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
+                    <ImageView
+                        android:id="@+id/BFcreditRub"
+
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/roubleyes" />
+
+                    <ImageView
+                        android:id="@+id/BFcreditDol"
+
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/dollaryes" />
+
+                    <ImageView
+                        android:id="@+id/BFcreditEuro"
+
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/euroyes" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/BFcreditStavka"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="от 14%"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <!--View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/header2" /-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/header2"
-                android:drawableEnd="@drawable/ic_keyboard_arrow_down_orange24dp"
-                android:fontFamily="@font/museosanscyrl_500"
-                android:textColor="@color/orange"
-                android:paddingLeft="22dp"
-                android:paddingRight="8dp"
-                android:text="Вклады" />
+                android:layout_marginTop="8dp"
+                android:background="@color/orange"
+                android:orientation="horizontal">
 
-            <Button
-                android:layout_marginRight="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:textColor="@color/orange"
-                android:layout_height="wrap_content"
-                android:background="@color/header2"
-                android:drawableEnd="@drawable/ic_keyboard_arrow_down_orange24dp"
-                android:fontFamily="@font/museosanscyrl_500"
-                android:paddingLeft="22dp"
-                android:paddingRight="8dp"
-                android:text="Карты" />
+                <Button
+                    android:id="@+id/btnVklad"
 
-            <Button
-                android:layout_marginLeft="2dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@color/header2"
-                android:textColor="@color/orange"
-                android:drawableEnd="@drawable/ic_keyboard_arrow_down_orange24dp"
-                android:fontFamily="@font/museosanscyrl_500"
-                android:paddingLeft="22dp"
-                android:paddingRight="8dp"
-                android:text="Кредиты" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/header2"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down_orange24dp"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="8dp"
+                    android:text="Вклады"
+                    android:textColor="@color/orange" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnCard"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/header2"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down_orange24dp"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="8dp"
+                    android:text="Карты"
+                    android:textColor="@color/orange" />
+
+                <!--View
+                android:background="@color/orange"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"/-->
+
+                <Button
+                    android:id="@+id/btnCredit"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/header2"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down_orange24dp"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="8dp"
+                    android:text="Кредиты"
+                    android:textColor="@color/orange" />
+
+            </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandLAVklad"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/expand_la_header"
+                android:orientation="vertical"
+                app:el_duration="600"
+                app:el_expanded="false"
+                app:el_parallax="0.5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/BFrecVVklads"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+            </net.cachapa.expandablelayout.ExpandableLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/BFrecVVklads"
+                android:id="@+id/BFrecVCards"
 
-                android:layout_marginRight="4dp"
-                android:layout_marginLeft="4dp"
-                android:background="@color/miuiMiddleGray"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                >
 
             </android.support.v7.widget.RecyclerView>
 
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandLACard"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/expand_la_header"
+                android:orientation="vertical"
+                app:el_duration="600"
+                app:el_expanded="false"
+                app:el_parallax="0.5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+
+                </LinearLayout>
+
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/BFrecVCredit"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandLACredit"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/expand_la_header"
+                android:orientation="vertical"
+                app:el_duration="600"
+                app:el_expanded="false"
+                app:el_parallax="0.5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+
+                </LinearLayout>
+
+            </net.cachapa.expandablelayout.ExpandableLayout>
+            <!--ca
+                android:id="@+id/expandLAVklad"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:ael_duration="250"
+                app:ael_expanded="true"
+                app:ael_interpolator="accelerate"
+                app:ael_orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+
+
+                </LinearLayout>
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout-->
+
+
         </LinearLayout>
 
 
-    </LinearLayout>
-
     </ScrollView>
+
+    <Button
+        android:id="@+id/needHelp"
+
+        android:layout_weight="2"
+        android:textAllCaps="false"
+        android:fontFamily="@font/museosanscyrl_700"
+        android:textColor="@color/header2"
+        android:text="Найти банки рядом"
+        android:background="@drawable/button_orange_inside"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
 </LinearLayout>
