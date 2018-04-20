@@ -91,7 +91,7 @@
                         app:isb_thumb_color="@color/orange"
                         app:isb_tick_color="@android:color/transparent"
                         app:isb_tick_num="81"
-                        app:isb_track_background_bar_color="@color/myGray"
+                        app:isb_track_background_bar_color="@color/blueLight"
                         app:isb_track_progress_bar_color="@color/orange" />
 
                     <View
@@ -158,7 +158,7 @@
                         app:isb_thumb_color="@color/orange"
                         app:isb_tick_color="@android:color/transparent"
                         app:isb_tick_num="81"
-                        app:isb_track_background_bar_color="@color/myGray"
+                        app:isb_track_background_bar_color="@color/blueLight"
                         app:isb_track_progress_bar_color="@color/orange" />
 
                     <View

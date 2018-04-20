@@ -32,12 +32,12 @@
             android:background="@color/header2"
 
             app:tabTextAppearance="@style/tab_text"
-            app:tabIndicatorColor="@color/orange"
+            app:tabIndicatorColor="@color/blueozornoi"
             app:tabGravity="fill"
             app:tabMode="fixed"
             app:tabBackground="@color/header2"
             app:tabTextColor="@color/myWhite"
-            app:tabSelectedTextColor="@color/orange"
+            app:tabSelectedTextColor="@color/blueozornoi"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize">
         </android.support.design.widget.TabLayout>
@@ -54,10 +54,10 @@
 
     </LinearLayout>
 
-    <View
+    <!--View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@color/header2" />
+        android:background="@color/header2" /-->
 
     <Button
         android:fontFamily="@font/museosanscyrl_700"

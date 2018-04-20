@@ -131,7 +131,7 @@
                     android:layout_weight="1"
                     android:text="до 8%"
                     android:textAlignment="center"
-                    android:textColor="@color/miuiOrange"
+                    android:textColor="@color/orange"
                     android:textSize="18dp" />
 
                 <TextView
@@ -142,7 +142,7 @@
                     android:layout_weight="1"
                     android:text="до 8%"
                     android:textAlignment="center"
-                    android:textColor="@color/miuiOrange"
+                    android:textColor="@color/orange"
                     android:textSize="18dp" />
                 <TextView
                     android:fontFamily="@font/museosanscyrl_500"
@@ -152,7 +152,7 @@
                     android:layout_weight="1"
                     android:text="до 8%"
                     android:textAlignment="center"
-                    android:textColor="@color/miuiOrange"
+                    android:textColor="@color/orange"
                     android:textSize="18dp" />
 
             </LinearLayout>

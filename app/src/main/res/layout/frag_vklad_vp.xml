@@ -1,7 +1,7 @@
 <FrameLayout
     android:id="@+id/frameVklad"
 
-    android:background="@color/myWhite"
+    android:background="@color/realWhite"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_marginTop="12dp"
                 android:text="Максимальная ставка по вкладу :"
                 android:textAlignment="center"
-                android:textColor="@color/header2"
+                android:textColor="@color/miuiDarkGray"
                 android:textSize="18dp" />
 
 
@@ -47,7 +47,7 @@
                     android:layout_weight="1.1"
                     android:text="1.0"
                     android:textAlignment="textEnd"
-                    android:textColor="@color/miuiOrange"
+                    android:textColor="@color/orange"
                     android:textSize="28dp" />
 
                 <TextView
@@ -58,7 +58,7 @@
                     android:layout_toRightOf="@+id/procentTB"
                     android:layout_weight="1"
                     android:text="%"
-                    android:textColor="@color/miuiOrange"
+                    android:textColor="@color/orange"
                     android:textSize="20dp" />
             </RelativeLayout>
 
@@ -75,12 +75,12 @@
                 app:isb_progress_value_float="true"
                 app:isb_seek_bar_type="continuous_texts_ends"
                 app:isb_show_indicator="false"
-                app:isb_text_color="@color/header2"
+                app:isb_text_color="@color/orange"
                 app:isb_text_left_end="0,01%"
                 app:isb_text_right_end="10.0%"
                 app:isb_thumb_color="@color/orange"
-                app:isb_track_background_bar_color="@color/myGray"
-                app:isb_track_progress_bar_color="@color/miuiOrange" />
+                app:isb_track_background_bar_color="@color/blueLight"
+                app:isb_track_progress_bar_color="@color/orange" />
 
 
             <View
