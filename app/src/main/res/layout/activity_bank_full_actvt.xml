@@ -340,25 +340,29 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/orange"
                 android:orientation="horizontal">
+
 
                 <ToggleButton
                     android:id="@+id/btnVklad"
 
+                    android:textSize="16dp"
+                    android:textAllCaps="false"
                     android:layout_width="0dp"
                     android:layout_height="44dp"
                     android:layout_weight="1"
                     android:background="@drawable/toggle"
-                    android:drawableRight="@drawable/ic_keyboard_arrow_down_orange24dp"
-                    android:fontFamily="@font/museosanscyrl_500"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                    android:fontFamily="@font/museosanscyrl_700"
                     android:paddingLeft="22dp"
                     android:paddingRight="8dp"
                     android:textOff="Вклады"
                     android:textOn="Вклады"
-                    android:textColor="@color/orange" />
+                    android:textColor="@color/header2" />
 
                 <View
+                    android:visibility="gone"
+                    android:id="@+id/orangeViewLeft"
                     android:background="@color/orange"
                     android:layout_width="1dp"
                     android:layout_height="44dp"/>
@@ -366,19 +370,23 @@
                 <ToggleButton
                     android:id="@+id/btnCard"
 
+                    android:textSize="16dp"
+                    android:textAllCaps="false"
                     android:layout_width="0dp"
                     android:layout_height="44dp"
                     android:layout_weight="1"
                     android:background="@drawable/toggle"
-                    android:drawableRight="@drawable/ic_keyboard_arrow_down_orange24dp"
-                    android:fontFamily="@font/museosanscyrl_500"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                    android:fontFamily="@font/museosanscyrl_700"
                     android:paddingLeft="22dp"
                     android:paddingRight="8dp"
                     android:textOff="Карты"
                     android:textOn="Карты"
-                    android:textColor="@color/orange" />
+                    android:textColor="@color/header2" />
 
                 <View
+                    android:visibility="gone"
+                    android:id="@+id/orangeViewRight"
                 android:background="@color/orange"
                 android:layout_width="1dp"
                 android:layout_height="44dp"/>
@@ -386,24 +394,26 @@
                 <ToggleButton
                     android:id="@+id/btnCredit"
 
+                    android:textSize="16dp"
+                    android:textAllCaps="false"
                     android:layout_width="0dp"
                     android:layout_height="44dp"
                     android:layout_weight="1"
                     android:background="@drawable/toggle"
-                    android:drawableRight="@drawable/ic_keyboard_arrow_down_orange24dp"
-                    android:fontFamily="@font/museosanscyrl_500"
-                    android:paddingLeft="22dp"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                    android:fontFamily="@font/museosanscyrl_700"
+                    android:paddingLeft="12dp"
                     android:paddingRight="8dp"
                     android:textOn="Кредиты"
                     android:textOff="Кредиты"
-                    android:textColor="@color/orange" />
+                    android:textColor="@color/header2" />
 
             </LinearLayout>
 
-            <View
+            <!--View
                 android:background="@color/orange"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="2dp"/-->
 
 
             <net.cachapa.expandablelayout.ExpandableLayout

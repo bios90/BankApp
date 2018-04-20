@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -46,6 +47,8 @@ public class BankFullActvt extends AppCompatActivity
     Drawable euroYes;
     Drawable euroNo;
 
+    View orRight,orLeft;
+
     ColorDrawable header2;
     ColorDrawable orange;
 
@@ -79,6 +82,9 @@ public class BankFullActvt extends AppCompatActivity
         header2=new ColorDrawable(0xFF212121);
         orange=new ColorDrawable(0xFFf7811d);
 
+        orLeft=(View)findViewById(R.id.orangeViewLeft);
+        orRight=(View)findViewById(R.id.orangeViewRight);
+
         final int headerint=getResources().getColor(R.color.header2);
         final int orangeint=getResources().getColor(R.color.orange);
 
@@ -110,21 +116,25 @@ public class BankFullActvt extends AppCompatActivity
         btnCard=(ToggleButton)findViewById(R.id.btnCard);
         btnCredit=(ToggleButton)findViewById(R.id.btnCredit);
 
+        btnVklad.setTypeface(ResourcesCompat.getFont(BankFullActvt.this, R.font.museosanscyrl_500));
+        btnCard.setTypeface(ResourcesCompat.getFont(BankFullActvt.this, R.font.museosanscyrl_500));
+        btnCredit.setTypeface(ResourcesCompat.getFont(BankFullActvt.this, R.font.museosanscyrl_500));
+
         btnCredit.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                if(btnCredit.isChecked())
-                {
-                    btnCredit.setTextColor(headerint);
-                    btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
-                }
-                else
-                    {
-                        btnCredit.setTextColor(orangeint);
-                        btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
-                    }
+//                if(btnCredit.isChecked())
+//                {
+//                    btnCredit.setTextColor(headerint);
+//                    btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
+//                }
+//                else
+//                    {
+//                        btnCredit.setTextColor(orangeint);
+//                        btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
+//                    }
 
                 boolean others=(expandVklad.isExpanded() || expandCard.isExpanded());
 
@@ -159,16 +169,16 @@ public class BankFullActvt extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                if(btnCard.isChecked())
-                {
-                    btnCard.setTextColor(headerint);
-                    btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
-                }
-                else
-                {
-                    btnCard.setTextColor(orangeint);
-                    btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
-                }
+//                if(btnCard.isChecked())
+//                {
+//                    btnCard.setTextColor(headerint);
+//                    btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
+//                }
+//                else
+//                {
+//                    btnCard.setTextColor(orangeint);
+//                    btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
+//                }
 
                 boolean others=(expandVklad.isExpanded() || expandCredit.isExpanded());
 
@@ -204,16 +214,16 @@ public class BankFullActvt extends AppCompatActivity
             public void onClick(View v)
             {
 
-                if(btnVklad.isChecked())
-                {
-                    btnVklad.setTextColor(headerint);
-                    btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
-                }
-                else
-                {
-                    btnVklad.setTextColor(orangeint);
-                    btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
-                }
+//                if(btnVklad.isChecked())
+//                {
+//                    btnVklad.setTextColor(headerint);
+//                    btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowHeader,null);
+//                }
+//                else
+//                {
+//                    btnVklad.setTextColor(orangeint);
+//                    btnVklad.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
+//                }
                 //region OldColorsCheck
 //                int color = Color.TRANSPARENT;
 //                Drawable background = btnVklad.getBackground();
@@ -544,6 +554,40 @@ public class BankFullActvt extends AppCompatActivity
 
             btnCard.setVisibility(View.GONE);
         }
+
+        LoadSpaces();
+    }
+
+    private void LoadSpaces()
+    {
+        if((btnCredit.getVisibility()==View.VISIBLE) && (btnCard.getVisibility()==View.VISIBLE) && (btnVklad.getVisibility()==View.VISIBLE))
+        {
+            return;
+        }else
+            {
+                if(btnVklad.getVisibility()==View.VISIBLE && btnCard.getVisibility()==View.VISIBLE && btnCredit.getVisibility()==View.GONE)
+                {
+                    orRight.setVisibility(View.GONE);
+                    return;
+                }
+                if(btnVklad.getVisibility()==View.VISIBLE && btnCard.getVisibility()==View.GONE && btnCredit.getVisibility()==View.VISIBLE)
+                {
+                    orRight.setVisibility(View.GONE);
+                    return;
+                }
+                if(btnVklad.getVisibility()==View.GONE && btnCard.getVisibility()==View.VISIBLE && btnCredit.getVisibility()==View.VISIBLE)
+                {
+                    orLeft.setVisibility(View.GONE);
+                    return;
+                }
+                else
+                    {
+                        orRight.setVisibility(View.GONE);
+                        orLeft.setVisibility(View.GONE);
+                        return;
+                    }
+            }
+
     }
     //endregion
 
