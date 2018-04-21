@@ -81,7 +81,7 @@
                         android:layout_marginTop="8dp"
                         app:isb_max="80"
                         app:isb_min="1"
-                        app:isb_progress="2"
+                        app:isb_progress="1"
 
                         app:isb_seek_bar_type="discrete_ticks_texts_ends"
                         app:isb_show_indicator="false"
@@ -219,7 +219,7 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="24dp"
-                            android:src="@drawable/ic_keyboard_arrow_down_black_24dp" />
+                            app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
 
                     </RelativeLayout>
 

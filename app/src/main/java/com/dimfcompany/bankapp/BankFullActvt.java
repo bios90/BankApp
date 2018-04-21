@@ -435,7 +435,14 @@ public class BankFullActvt extends AppCompatActivity
 
             if(mmax[3]!=0.0)
             {
-                stavkaCard.setText("от "+ mmax[3]+"%");
+                if(mmax[3]==888.88)
+                {
+                    stavkaCard.setText("от 0%");
+                }
+                else
+                {
+                    stavkaCard.setText("от " + mmax[3] + "%");
+                }
             }
             else if(mmax[4]!=0.0)
             {
@@ -504,7 +511,7 @@ public class BankFullActvt extends AppCompatActivity
             adapterCredit=new AdapterBFIcredit(BankFullActvt.this,credits);
             recVCredits.setHasFixedSize(true);
             recVCredits.setAdapter(adapterCredit);
-            recVCredits.setNestedScrollingEnabled(false);
+            //recVCredits.setNestedScrollingEnabled(false);
         }else
         {
 //            btnCredit.setBackground(getResources().getDrawable(R.drawable.btn_disabled));
@@ -524,7 +531,7 @@ public class BankFullActvt extends AppCompatActivity
             adapterVklad=new AdapterBFIvklads(BankFullActvt.this,vklads,1);
             BFrecVVklads.setHasFixedSize(true);
             BFrecVVklads.setAdapter(adapterVklad);
-            BFrecVVklads.setNestedScrollingEnabled(false);
+            //BFrecVVklads.setNestedScrollingEnabled(false);
         }
         else
             {
@@ -545,7 +552,7 @@ public class BankFullActvt extends AppCompatActivity
             adapterCard=new AdapterBFIcards(BankFullActvt.this,cards);
             recVCards.setHasFixedSize(true);
             recVCards.setAdapter(adapterCard);
-            recVCards.setNestedScrollingEnabled(false);
+            //recVCards.setNestedScrollingEnabled(false);
         }
         else
         {

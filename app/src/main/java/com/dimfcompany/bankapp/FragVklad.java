@@ -199,7 +199,16 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
         pageV.currentVklad=this;
 
     }
-        //region VoidDataFromDataBaseOld
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        procentSeek.setProgress(procentSeek.getProgress());
+    }
+
+    //region VoidDataFromDataBaseOld
     /*private void ShowBanks()
     {
         banksRef.addValueEventListener(new ValueEventListener()

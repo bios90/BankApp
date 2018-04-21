@@ -82,8 +82,6 @@ public class FragCredit extends Fragment
         PageViewActivity pageV=(PageViewActivity)getActivity();
         pageV.currentCredit=this;
 
-
-
         //region CheckBox Inizialization
         tolkopass=(CheckBox)view.findViewById(R.id.CHBPassport);
         bezOpezpechenia=(CheckBox)view.findViewById(R.id.CBobsepech);
@@ -221,6 +219,7 @@ public class FragCredit extends Fragment
 
             }
 
+
             @Override
             public void onSectionChanged(IndicatorSeekBar seekBar, int thumbPosOnTick, String textBelowTick, boolean fromUserTouch) {
 
@@ -300,6 +299,17 @@ public class FragCredit extends Fragment
         //endregion
 
     }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        Log.e("!!!!!!!!!!!!!","RESUMEDDDDDD");
+
+        creditSeek.setProgress(creditSeek.getProgress());
+        creditTimeSeek.setProgress(creditTimeSeek.getProgress());
+    }
+
     //region ButtonLoadCredits
     public void ShowButton()
     {

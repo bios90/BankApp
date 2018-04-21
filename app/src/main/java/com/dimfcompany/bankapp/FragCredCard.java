@@ -250,6 +250,15 @@ public class FragCredCard extends Fragment
 
     }
 
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        credCardSrok.setProgress(credCardSrok.getProgress());
+        credCardLimit.setProgress(credCardLimit.getProgress());
+    }
+
     //region ShowButtonVoid
     public void showButton()
     {
