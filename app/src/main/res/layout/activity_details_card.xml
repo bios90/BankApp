@@ -17,7 +17,7 @@
                 android:padding="8dp"
                 android:background="@drawable/roundedheader"
                 android:gravity="center"
-                android:textColor="@color/orange"
+                android:textColor="@color/realWhite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="40dp"
@@ -37,29 +37,31 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_marginTop="4dp"
+                android:id="@+id/cardBankLA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/cardBankName"
 
-                    android:fontFamily="@font/museosanscyrl_500"
                     android:layout_width="0dp"
-                    android:paddingLeft="8dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="7"
                     android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:fontFamily="@font/museosanscyrl_500"
+                    android:paddingLeft="8dp"
                     android:text="Сбербанк России"
                     android:textAlignment="center"
                     android:textColor="@color/header2"
                     android:textSize="18dp" />
 
                 <RelativeLayout
-                    android:gravity="center"
-                    android:layout_weight="5"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center">
 
                     <ImageView
                         android:id="@+id/cardBankLogo"
@@ -84,7 +86,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="4dp"
-                    android:background="@color/myGray" />
+                    android:background="@color/header2" />
 
 
                 <TextView
@@ -172,7 +174,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="4dp"
-                    android:background="@color/myGray" />
+                    android:background="@color/header2" />
 
 
                 <TextView
@@ -259,7 +261,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="4dp"
-                    android:background="@color/myGray" />
+                    android:background="@color/header2" />
 
 
                 <TextView
@@ -346,7 +348,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="4dp"
-                    android:background="@color/myGray" />
+                    android:background="@color/header2" />
 
 
             <TextView
@@ -435,7 +437,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/myGray" />
+                android:background="@color/header2" />
 
                 <LinearLayout
                     android:layout_marginTop="6dp"
@@ -478,7 +480,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/myGray" />
+                android:background="@color/header2" />
 
             <LinearLayout
                 android:id="@+id/cardBesplatOLayout"
@@ -678,7 +680,7 @@
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/myGray" />
+        android:background="@color/header2" />
 
 
             <TextView

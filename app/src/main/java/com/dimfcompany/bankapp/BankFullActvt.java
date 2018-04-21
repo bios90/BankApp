@@ -397,7 +397,7 @@ public class BankFullActvt extends AppCompatActivity
         {
             vkladR.setImageDrawable(mmax[0]==0.0?rubNo:rubYes);
             vkladD.setImageDrawable(mmax[1]==0.0?dolNo:dolYes);
-            vkladD.setImageDrawable(mmax[2]==0.0?euroNo:euroYes);
+            vkladE.setImageDrawable(mmax[2]==0.0?euroNo:euroYes);
 
             if(mmax[0]!=0.0)
             {
@@ -415,7 +415,7 @@ public class BankFullActvt extends AppCompatActivity
             {
                 vkladR.setImageDrawable(rubNo);
                 vkladD.setImageDrawable(dolNo);
-                vkladD.setImageDrawable(euroNo);
+                vkladE.setImageDrawable(euroNo);
                 stavkaVklad.setText("--");
             }
         }
@@ -423,7 +423,7 @@ public class BankFullActvt extends AppCompatActivity
             {
                 vkladR.setImageDrawable(rubNo);
                 vkladD.setImageDrawable(dolNo);
-                vkladD.setImageDrawable(euroNo);
+                vkladE.setImageDrawable(euroNo);
                 stavkaVklad.setText("--");
             }
 

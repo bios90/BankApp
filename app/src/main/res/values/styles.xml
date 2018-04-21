@@ -19,11 +19,20 @@
 
     </style>
 
-    <style name="Custom" parent="android:Theme.DeviceDefault.Dialog">
-        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
 
+    <style name="textCustom" parent="android:TextAppearance.Medium">
+        <item name="android:textColor">@color/realWhite</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="Custom" parent="android:Theme.DeviceDefault.Dialog">
+        <!--item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item-->
+
+        <item name="DialogTitleAppearance">@style/textCustom</item>
+
+        <item name="android:background">@color/header2</item>
         <item name="DialogTitleText">Загрузка...</item>
-        <item name="DialogSpotColor">@color/orange</item>
+        <item name="DialogSpotColor">@color/blueozornoi</item>
         <item name="DialogSpotCount">4</item>
     </style>
 

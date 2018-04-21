@@ -16,9 +16,10 @@ public class DetailsCard extends AppCompatActivity
 {
 
     TextView name,bankName,stavkarub,stavkadol,stavkaeuro,limitrub,limitdol,limiteuro,lgotSrok,lgottype,besplatO,stoimostO,cashBack,nalSnyatie,bistrR,dostavka,age,staj,podtverj,register;
-    LinearLayout rubLA,dolLA,euroLA,lgotYesLA,lgotNoLA,besplatLA,yearPAyLA;
+    LinearLayout rubLA,dolLA,euroLA,lgotYesLA,lgotNoLA,besplatLA,yearPAyLA,bankLA;
     ImageView logo;
 
+    ModelCard card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -60,6 +61,8 @@ public class DetailsCard extends AppCompatActivity
         besplatLA=(LinearLayout)findViewById(R.id.cardBesplatOLayout);
         yearPAyLA=(LinearLayout)findViewById(R.id.cardGodovoeLayout);
 
+        bankLA=(LinearLayout)findViewById(R.id.cardBankLA);
+
         logo=(ImageView)findViewById(R.id.cardBankLogo);
 
         LinearLayout.LayoutParams paramForIndividual = new LinearLayout.LayoutParams(
@@ -69,8 +72,9 @@ public class DetailsCard extends AppCompatActivity
         );
         //endregion
 
-        ModelCard card= new ModelCard();//BanksShow.currentCards.get(num);
+        card= new ModelCard();
 
+        //region MakeView
         if(num!=9999)
         {
             card = BanksShow.currentCards.get(num);
@@ -268,6 +272,18 @@ public class DetailsCard extends AppCompatActivity
            }
 
         Picasso.get().load(card.getLogo()).error(getResources().getDrawable(R.drawable.logodefault)).into(logo);
+        //endregion
+
+        bankLA.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(DetailsCard.this,BankFullActvt.class);
+                intent.putExtra("id_bank",card.getId_bank());
+                startActivity(intent);
+            }
+        });
     }
 
     String FormingDays(int days)

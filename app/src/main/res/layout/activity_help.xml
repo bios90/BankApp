@@ -14,7 +14,7 @@
         android:padding="8dp"
         android:background="@drawable/roundedheader"
         android:gravity="center"
-        android:textColor="@color/orange"
+        android:textColor="@color/blueozornoi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="40dp"
@@ -56,7 +56,7 @@
 
                 android:textColorHint="@color/myWhite"
                 android:textSize="16dp"
-                android:textColor="@color/orange"
+                android:textColor="@color/blueozornoi"
                 android:hint="Имя..."
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
@@ -68,7 +68,7 @@
 
                 android:textColorHint="@color/myWhite"
                 android:textSize="16dp"
-                android:textColor="@color/orange"
+                android:textColor="@color/blueozornoi"
                 android:hint="Фамилия..."
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
@@ -81,7 +81,7 @@
                 android:textColorHint="@color/myWhite"
                 android:textSize="16dp"
                 android:inputType="phone"
-                android:textColor="@color/orange"
+                android:textColor="@color/blueozornoi"
                 android:hint="Телефон..."
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
@@ -93,7 +93,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:textColor="@color/orange"
+                android:textColor="@color/blueozornoi"
                 android:fontFamily="@font/museosanscyrl_500"
                 android:text="Категория вопроса"
                 android:textSize="18dp"
@@ -118,7 +118,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="24dp"
 
-                    android:src="@drawable/ic_keyboard_arrow_down_orange24dp" />
+                    app:srcCompat="@drawable/ic_keyboard_arrow_down_orange24dp" />
 
             </RelativeLayout>
 
@@ -126,7 +126,7 @@
                 android:id="@+id/helpQuestion"
                 android:gravity="start"
 
-                android:textColor="@color/orange"
+                android:textColor="@color/blueozornoi"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:paddingTop="4dp"
@@ -155,7 +155,7 @@
                 android:text="Задать вопрос"
                 android:textSize="20dp"
                 android:textColor="@color/header2"
-                android:background="@drawable/roundedorange"
+                android:background="@drawable/roundedozornoi"
                 android:layout_width="match_parent"
                 android:layout_height="40dp" />
 

@@ -16,7 +16,9 @@ public class DetailsVklad extends AppCompatActivity {
 
     TextView name,bankname,rubstavka,rubsymma,rubsrok,dolstavka,dolsymma,dolsrok,eurostavka,eurosymma,eurosrok,popol,snyatie,rastorj;
     ImageView logo;
-    LinearLayout rubLA,dolLA,euroLA;
+    LinearLayout rubLA,dolLA,euroLA,bankLA;
+
+    ModelVklad vklad;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -47,9 +49,11 @@ public class DetailsVklad extends AppCompatActivity {
         rubLA=(LinearLayout)findViewById(R.id.vkladRubLA);
         dolLA=(LinearLayout)findViewById(R.id.vkladDolLA);
         euroLA=(LinearLayout)findViewById(R.id.vkladEuroLA);
+
+        bankLA=(LinearLayout)findViewById(R.id.vkladBankLA);
         //endregion
 
-        ModelVklad vklad=new ModelVklad();
+        vklad=new ModelVklad();
         if(num!=9999)
         {
             vklad = BanksShow.currentVklads.get(num);
@@ -179,5 +183,16 @@ public class DetailsVklad extends AppCompatActivity {
 
 
         Picasso.get().load(vklad.getLogo()).error(getResources().getDrawable(R.drawable.logodefault)).into(logo);
+
+        bankLA.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(DetailsVklad.this,BankFullActvt.class);
+                intent.putExtra("id_bank",vklad.getBank_id());
+                startActivity(intent);
+            }
+        });
     }
 }

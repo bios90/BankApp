@@ -16,9 +16,11 @@ public class DetailsCredit extends AppCompatActivity
     TextView creditName,creditBankName,rubStavka,rubSumma,rubSrok,dolStavka,dolSumma,dolSrok,refinans,obes,staj,tolkopass,
     podtverjName,ndfl,bankForm,other,noPodtverj;
 
-    LinearLayout rubLA,dolLA;
+    LinearLayout rubLA,dolLA,bankLA;
 
     ImageView logo;
+
+    ModelCredit credit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,12 +53,15 @@ public class DetailsCredit extends AppCompatActivity
 
         logo=(ImageView)findViewById(R.id.creditInfoLogo);
 
+        bankLA=(LinearLayout)findViewById(R.id.creditBankLA);
+
         rubLA=(LinearLayout)findViewById(R.id.creditRubLayout);
         dolLA=(LinearLayout)findViewById(R.id.creditDolLayout);
         //endregion
 
-        ModelCredit credit=new ModelCredit();// BanksShow.currentCredits.get(num);
+        credit=new ModelCredit();// BanksShow.currentCredits.get(num);
 
+        //region MakeView
         if(num!=9999)
         {
             credit = BanksShow.currentCredits.get(num);
@@ -185,6 +190,18 @@ public class DetailsCredit extends AppCompatActivity
 
 
         Picasso.get().load(credit.getLogo()).error(getResources().getDrawable(R.drawable.logodefault)).into(logo);
+        //endregion
+
+        bankLA.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(DetailsCredit.this,BankFullActvt.class);
+                intent.putExtra("id_bank",credit.getBank_id());
+                startActivity(intent);
+            }
+        });
     }
 
     String srokString(int srok)

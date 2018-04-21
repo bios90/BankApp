@@ -15,7 +15,7 @@
         android:background="@drawable/roundedheader"
         android:textSize="20dp"
         android:textAlignment="center"
-        android:textColor="@color/orange"
+        android:textColor="@color/realWhite"
         android:text="Сортировка"
         android:layout_width="match_parent"
         android:layout_height="40dp" />
@@ -23,7 +23,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/orange" />
+        android:background="@color/blueozornoi" />
 
     <!--View
         android:layout_marginRight="20dp"
@@ -45,7 +45,7 @@
         android:paddingLeft="20dp"
         android:text="По размеру ставки"
         android:textAlignment="textStart"
-        android:textColor="@color/myWhite"
+        android:textColor="@color/realWhite"
         android:textSize="16dp" />
 
 
@@ -62,7 +62,7 @@
         android:paddingLeft="20dp"
         android:text="По максиальному лимиту"
         android:textAlignment="textStart"
-        android:textColor="@color/myWhite"
+        android:textColor="@color/realWhite"
         android:textSize="16dp" />
     <CheckBox
         android:id="@+id/chPoSrokyCard"
@@ -76,7 +76,7 @@
         android:paddingLeft="20dp"
         android:text="По льготному периоду"
         android:textAlignment="textStart"
-        android:textColor="@color/myWhite"
+        android:textColor="@color/realWhite"
         android:textSize="16dp" />
 
     <CheckBox
@@ -91,7 +91,7 @@
         android:paddingLeft="20dp"
         android:text="По стоимости обслуживания"
         android:textAlignment="textStart"
-        android:textColor="@color/myWhite"
+        android:textColor="@color/realWhite"
         android:textSize="16dp" />
 
     <CheckBox
@@ -106,7 +106,7 @@
         android:paddingLeft="20dp"
         android:text="По банкам"
         android:textAlignment="textStart"
-        android:textColor="@color/myWhite"
+        android:textColor="@color/realWhite"
         android:textSize="16dp" />
 
     <CheckBox
@@ -121,7 +121,7 @@
         android:paddingLeft="20dp"
         android:text="По названию кредита"
         android:textAlignment="textStart"
-        android:textColor="@color/myWhite"
+        android:textColor="@color/realWhite"
         android:textSize="16dp" />
 
 
@@ -137,7 +137,7 @@
         android:text="Показать"
         android:textSize="18dp"
         android:textColor="@color/header2"
-        android:background="@drawable/roundedorange"
+        android:background="@drawable/roundedozornoi"
         android:layout_width="match_parent"
         android:layout_height="40dp" />
 

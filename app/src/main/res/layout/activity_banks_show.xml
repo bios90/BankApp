@@ -61,8 +61,8 @@
             android:layout_width="wrap_content"
 
             app:msb_hideDelayInMilliseconds="50"
-            app:msb_handleOffColour="@color/orangeTrans"
-            app:msb_handleColour="@color/orange"
+            app:msb_handleOffColour="@color/bluetrans"
+            app:msb_handleColour="@color/blueozornoi"
             app:msb_recyclerView="@id/recView"
             app:msb_lightOnTouch="true"
             android:layout_height="match_parent"

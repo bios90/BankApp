@@ -143,7 +143,6 @@ public class AdapterCards extends RecyclerView.Adapter<AdapterCards.CardItemVH> 
             @Override
             public void onClick(View v)
             {
-                Log.e("BANKKKK",card.getId_bank()+"");
                 Intent intent = new Intent(ctx,BankFullActvt.class);
                 intent.putExtra("id_bank",card.getId_bank());
                 ctx.startActivity(intent);

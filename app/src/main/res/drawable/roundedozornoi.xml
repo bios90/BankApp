@@ -2,7 +2,7 @@
 
 
 
-<solid android:color="@color/orange" />
+<solid android:color="@color/blueozornoi" />
 
 <corners android:radius="3dp"/>
 

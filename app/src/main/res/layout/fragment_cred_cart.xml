@@ -244,7 +244,7 @@
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/button_trans"
-                android:drawableEnd="@drawable/ic_keyboard_arrow_down_black_24dp"
+                android:drawableEnd="@drawable/ic_keyboard_arrow_down_orange24dp"
                 android:fontFamily="@font/museosanscyrl_500"
                 android:paddingLeft="22dp"
                 android:paddingRight="16dp"
