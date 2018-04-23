@@ -1,9 +1,17 @@
 package com.dimfcompany.bankapp;
 
+import android.Manifest;
+import android.app.Dialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.net.Uri;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,14 +24,23 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.squareup.picasso.Picasso;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +64,7 @@ public class BankFullActvt extends AppCompatActivity
     Drawable euroYes;
     Drawable euroNo;
 
-    View orRight,orLeft;
+    View orRight, orLeft;
 
     ColorDrawable header2;
     ColorDrawable orange;
@@ -55,18 +72,25 @@ public class BankFullActvt extends AppCompatActivity
     Drawable arrowHeader;
     Drawable arrowOrange;
 
-    ToggleButton btnVklad,btnCard,btnCredit;
+    ToggleButton btnVklad, btnCard, btnCredit;
 
-    RecyclerView BFrecVVklads,recVCards,recVCredits;
+    static final int REQUEST_CODE_LOCATION = 7000;
+    Button locate;
+    boolean mLocationPermissionGranted = false;
+    FusedLocationProviderClient mFusedLocationProvierClient;
+    private static final String TAG = "BankFullActvt";
+
+
+    RecyclerView BFrecVVklads, recVCards, recVCredits;
 
     AdapterBFIvklads adapterVklad;
     AdapterBFIcards adapterCard;
     AdapterBFIcredit adapterCredit;
 
-    ExpandableLayout expandVklad,expandCard,expandCredit;
+    ExpandableLayout expandVklad, expandCard, expandCredit;
 
-    TextView bankName,bankAdress,bankSite,bankPhone,stavkaVklad,stavkaCard,stavkaCredit;
-    ImageView vkladR,vkladD,vkladE,cardR,cardD,cardE,creditR,creditD,creditE,logo;
+    TextView bankName, bankAdress, bankSite, bankPhone, stavkaVklad, stavkaCard, stavkaCredit;
+    ImageView vkladR, vkladD, vkladE, cardR, cardD, cardE, creditR, creditD, creditE, logo;
 
     double[] mmax = new double[9];
 
@@ -77,49 +101,51 @@ public class BankFullActvt extends AppCompatActivity
         setContentView(R.layout.activity_bank_full_actvt);
 
 
-
         //region Inizialization Colors && RecViews
-        header2=new ColorDrawable(0xFF212121);
-        orange=new ColorDrawable(0xFFf7811d);
+        header2 = new ColorDrawable(0xFF212121);
+        orange = new ColorDrawable(0xFFf7811d);
 
-        orLeft=(View)findViewById(R.id.orangeViewLeft);
-        orRight=(View)findViewById(R.id.orangeViewRight);
+        orLeft = (View) findViewById(R.id.orangeViewLeft);
+        orRight = (View) findViewById(R.id.orangeViewRight);
 
-        final int headerint=getResources().getColor(R.color.header2);
-        final int orangeint=getResources().getColor(R.color.orange);
+        final int headerint = getResources().getColor(R.color.header2);
+        final int orangeint = getResources().getColor(R.color.orange);
 
-        arrowHeader=getResources().getDrawable(R.drawable.ic_keyboard_arrow_down_black_24dp);
-        arrowOrange=getResources().getDrawable(R.drawable.ic_keyboard_arrow_down_orange24dp);
+        arrowHeader = getResources().getDrawable(R.drawable.ic_keyboard_arrow_down_black_24dp);
+        arrowOrange = getResources().getDrawable(R.drawable.ic_keyboard_arrow_down_orange24dp);
 
-        BFrecVVklads=(RecyclerView)findViewById(R.id.BFrecVVklads);
-        recVCards=(RecyclerView)findViewById(R.id.BFrecVCards);
-        recVCredits=(RecyclerView)findViewById(R.id.BFrecVCredit);
+        BFrecVVklads = (RecyclerView) findViewById(R.id.BFrecVVklads);
+        recVCards = (RecyclerView) findViewById(R.id.BFrecVCards);
+        recVCredits = (RecyclerView) findViewById(R.id.BFrecVCredit);
 
         BFrecVVklads.setLayoutManager(new LinearLayoutManager(this));
         recVCredits.setLayoutManager(new LinearLayoutManager(this));
         recVCards.setLayoutManager(new LinearLayoutManager(this));
 
-        expandVklad=(ExpandableLayout)findViewById(R.id.expandLAVklad);
-        expandCard=(ExpandableLayout)findViewById(R.id.expandLACard);
-        expandCredit=(ExpandableLayout)findViewById(R.id.expandLACredit);
+        expandVklad = (ExpandableLayout) findViewById(R.id.expandLAVklad);
+        expandCard = (ExpandableLayout) findViewById(R.id.expandLACard);
+        expandCredit = (ExpandableLayout) findViewById(R.id.expandLACredit);
 
-        rubYes=getResources().getDrawable(R.drawable.roubleyes);
-        rubNo=getResources().getDrawable(R.drawable.roubleno);
-        dolYes=getResources().getDrawable(R.drawable.dollaryes);
-        dolNo=getResources().getDrawable(R.drawable.dollarno);
-        euroYes=getResources().getDrawable(R.drawable.euroyes);
-        euroNo=getResources().getDrawable(R.drawable.eurono);
+        rubYes = getResources().getDrawable(R.drawable.roubleyes);
+        rubNo = getResources().getDrawable(R.drawable.roubleno);
+        dolYes = getResources().getDrawable(R.drawable.dollaryes);
+        dolNo = getResources().getDrawable(R.drawable.dollarno);
+        euroYes = getResources().getDrawable(R.drawable.euroyes);
+        euroNo = getResources().getDrawable(R.drawable.eurono);
 
         //endregion
         //region Buttons
-        btnVklad=(ToggleButton)findViewById(R.id.btnVklad);
-        btnCard=(ToggleButton)findViewById(R.id.btnCard);
-        btnCredit=(ToggleButton)findViewById(R.id.btnCredit);
+        btnVklad = (ToggleButton) findViewById(R.id.btnVklad);
+        btnCard = (ToggleButton) findViewById(R.id.btnCard);
+        btnCredit = (ToggleButton) findViewById(R.id.btnCredit);
+        locate = (Button) findViewById(R.id.BFlocate);
 
         btnVklad.setTypeface(ResourcesCompat.getFont(BankFullActvt.this, R.font.museosanscyrl_500));
         btnCard.setTypeface(ResourcesCompat.getFont(BankFullActvt.this, R.font.museosanscyrl_500));
         btnCredit.setTypeface(ResourcesCompat.getFont(BankFullActvt.this, R.font.museosanscyrl_500));
+        locate.setTypeface(ResourcesCompat.getFont(BankFullActvt.this, R.font.museosanscyrl_500));
 
+        //region ProductButtons
         btnCredit.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -136,14 +162,14 @@ public class BankFullActvt extends AppCompatActivity
 //                        btnCredit.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
 //                    }
 
-                boolean others=(expandVklad.isExpanded() || expandCard.isExpanded());
+                boolean others = (expandVklad.isExpanded() || expandCard.isExpanded());
 
-                if(expandVklad.isExpanded())btnVklad.performClick();
-                if(expandCard.isExpanded())btnCard.performClick();
+                if (expandVklad.isExpanded()) btnVklad.performClick();
+                if (expandCard.isExpanded()) btnCard.performClick();
                 expandVklad.collapse(true);
                 expandCard.collapse(true);
 
-                if(others==true)
+                if (others == true)
                 {
                     final Handler handler = new Handler();
                     handler.postDelayed(new Runnable()
@@ -156,10 +182,10 @@ public class BankFullActvt extends AppCompatActivity
 
                         }
                     }, 460);
-                }else
-                    {
-                        expandCredit.toggle();
-                    }
+                } else
+                {
+                    expandCredit.toggle();
+                }
 
             }
         });
@@ -180,14 +206,14 @@ public class BankFullActvt extends AppCompatActivity
 //                    btnCard.setCompoundDrawablesWithIntrinsicBounds(null,null,arrowOrange,null);
 //                }
 
-                boolean others=(expandVklad.isExpanded() || expandCredit.isExpanded());
+                boolean others = (expandVklad.isExpanded() || expandCredit.isExpanded());
 
-                if(expandVklad.isExpanded())btnVklad.performClick();
-                if(expandCredit.isExpanded())btnCredit.performClick();
+                if (expandVklad.isExpanded()) btnVklad.performClick();
+                if (expandCredit.isExpanded()) btnCredit.performClick();
                 expandVklad.collapse(true);
                 expandCredit.collapse(true);
 
-                if(others==true)
+                if (others == true)
                 {
                     final Handler handler = new Handler();
                     handler.postDelayed(new Runnable()
@@ -200,7 +226,7 @@ public class BankFullActvt extends AppCompatActivity
 
                         }
                     }, 460);
-                }else
+                } else
                 {
                     expandCard.toggle();
                 }
@@ -247,14 +273,14 @@ public class BankFullActvt extends AppCompatActivity
 //                }
                 //endregion
 
-                boolean others=(expandCard.isExpanded() || expandCredit.isExpanded());
+                boolean others = (expandCard.isExpanded() || expandCredit.isExpanded());
 
-                if(expandCard.isExpanded())btnCard.performClick();
-                if(expandCredit.isExpanded())btnCredit.performClick();
+                if (expandCard.isExpanded()) btnCard.performClick();
+                if (expandCredit.isExpanded()) btnCredit.performClick();
                 expandCard.collapse(true);
                 expandCredit.collapse(true);
 
-                if(others==true)
+                if (others == true)
                 {
                     final Handler handler = new Handler();
                     handler.postDelayed(new Runnable()
@@ -267,7 +293,7 @@ public class BankFullActvt extends AppCompatActivity
 
                         }
                     }, 460);
-                }else
+                } else
                 {
                     expandVklad.toggle();
                 }
@@ -275,37 +301,55 @@ public class BankFullActvt extends AppCompatActivity
         });
         //endregion
 
+        //region LocateButton
+        locate.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Log.e(TAG, "onClick: " );
+                if (mLocationPermissionGranted)
+                {
+                    ShowLcoation();
+                }
+                else
+                {
+                    RequestPermission();
+                }
+            }
+        });
+        //endregion
 
-        id_bank = getIntent().getIntExtra("id_bank",0);
+        id_bank = getIntent().getIntExtra("id_bank", 0);
 
 
-        sd=new SpotsDialog(BankFullActvt.this, R.style.Custom);
+        sd = new SpotsDialog(BankFullActvt.this, R.style.Custom);
         sd.show();
 
         //region Inizialization
-        vklads=new ArrayList<>();
-        cards=new ArrayList<>();
-        credits=new ArrayList<>();
+        vklads = new ArrayList<>();
+        cards = new ArrayList<>();
+        credits = new ArrayList<>();
 
-        bankName=(TextView)findViewById(R.id.BFbank_name);
-        bankAdress=(TextView)findViewById(R.id.BFbankAdress);
-        bankSite=(TextView)findViewById(R.id.BFbankSite);
-        bankPhone=(TextView)findViewById(R.id.BFbankPhone);
-        stavkaVklad=(TextView)findViewById(R.id.BFvkladStavka);
-        stavkaCard=(TextView)findViewById(R.id.BFcardStavka);
-        stavkaCredit=(TextView)findViewById(R.id.BFcreditStavka);
+        bankName = (TextView) findViewById(R.id.BFbank_name);
+        bankAdress = (TextView) findViewById(R.id.BFbankAdress);
+        bankSite = (TextView) findViewById(R.id.BFbankSite);
+        bankPhone = (TextView) findViewById(R.id.BFbankPhone);
+        stavkaVklad = (TextView) findViewById(R.id.BFvkladStavka);
+        stavkaCard = (TextView) findViewById(R.id.BFcardStavka);
+        stavkaCredit = (TextView) findViewById(R.id.BFcreditStavka);
 
-        vkladR=(ImageView)findViewById(R.id.BFvkladRub);
-        vkladD=(ImageView)findViewById(R.id.BFvkladDol);
-        vkladE=(ImageView)findViewById(R.id.BFvkladEuro);
-        cardR=(ImageView)findViewById(R.id.BFcardRub);
-        cardD=(ImageView)findViewById(R.id.BFcardDol);
-        cardE=(ImageView)findViewById(R.id.BFcardEuro);
-        creditR=(ImageView)findViewById(R.id.BFcreditRub);
-        creditD=(ImageView)findViewById(R.id.BFcreditDol);
-        creditE=(ImageView)findViewById(R.id.BFcreditEuro);
+        vkladR = (ImageView) findViewById(R.id.BFvkladRub);
+        vkladD = (ImageView) findViewById(R.id.BFvkladDol);
+        vkladE = (ImageView) findViewById(R.id.BFvkladEuro);
+        cardR = (ImageView) findViewById(R.id.BFcardRub);
+        cardD = (ImageView) findViewById(R.id.BFcardDol);
+        cardE = (ImageView) findViewById(R.id.BFcardEuro);
+        creditR = (ImageView) findViewById(R.id.BFcreditRub);
+        creditD = (ImageView) findViewById(R.id.BFcreditDol);
+        creditE = (ImageView) findViewById(R.id.BFcreditEuro);
 
-        logo=(ImageView)findViewById(R.id.BFbankLogo);
+        logo = (ImageView) findViewById(R.id.BFbankLogo);
         //endregion
 
         LoadBankInfo(id_bank);
@@ -313,6 +357,105 @@ public class BankFullActvt extends AppCompatActivity
 
     }
 
+    private void RequestPermission()
+    {
+
+        Log.e(TAG, "RequestPermission: " );
+        String[] permissions = {android.Manifest.permission.ACCESS_COARSE_LOCATION
+                , Manifest.permission.ACCESS_FINE_LOCATION};
+
+        if (ActivityCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+        {
+            mLocationPermissionGranted = true;
+            ShowLcoation();
+
+        } else
+        {
+            ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE_LOCATION);
+        }
+    }
+
+    private void ShowLcoation()
+    {
+        Log.e(TAG, "ShowLcoation: " );
+        mFusedLocationProvierClient = LocationServices.getFusedLocationProviderClient(this);
+        try
+        {
+            if (mLocationPermissionGranted)
+            {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+                {
+                    PageViewActivity.ShowToast(this,"Приложению запрещен доступ к геоданным. Если вы хотите найти ближайший банк,измените настройки");
+                    return;
+                }
+                final Task location = mFusedLocationProvierClient.getLastLocation();
+                location.addOnCompleteListener(new OnCompleteListener()
+                {
+                    @Override
+                    public void onComplete(@NonNull Task task)
+                    {
+                        if(task.isSuccessful())
+                        {
+                            Location curLocation = (Location)task.getResult();
+                            if(curLocation!=null)
+                            {
+                                double lat = curLocation.getLatitude();
+                                double lon= curLocation.getLongitude();
+
+                                String bankName = bank.getName();
+                                String noSpaces=bankName.replace(' ','+');
+                                String mapurl = "https://www.google.com/maps/search/"+noSpaces+"/@"+lat+""+","+""+lon+""+",16.0z"+"";
+                                Uri myUri= Uri.parse(mapurl);
+                                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                                        myUri);
+                                startActivity(intent);
+
+                            }
+                        }
+                        else
+                            {
+                                PageViewActivity.ShowToast(BankFullActvt.this,"Не удалось найти данные о геолокации.");
+                            }
+                    }
+                });
+
+            }
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        mLocationPermissionGranted=false;
+        switch(requestCode)
+        {
+            case REQUEST_CODE_LOCATION:
+                {
+                    if(grantResults.length>0)
+                    {
+                        for(int a= 0;a<grantResults.length;a++)
+                        {
+                            if(grantResults[a]!=PackageManager.PERMISSION_GRANTED)
+                            {
+                                mLocationPermissionGranted=false;
+                                PageViewActivity.ShowToast(BankFullActvt.this,"Нет доступа к данным геолокации,проверьте насторойи устройства.");
+                                return;
+                            }
+                        }
+                        ShowLcoation();
+                    }
+                    else
+                        {
+                            PageViewActivity.ShowToast(BankFullActvt.this,"Опять 25 нет доступа к данным геолокации,проверьте насторойи устройства.");
+                        }
+                }
+        }
+    }
 
     //region LoadInfo
     private void LoadBankInfo(int id_bank)
