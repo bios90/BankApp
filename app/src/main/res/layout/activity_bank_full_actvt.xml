@@ -40,7 +40,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:background="@color/snowwhite"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <android.support.v7.widget.CardView
@@ -435,6 +435,7 @@
             <net.cachapa.expandablelayout.ExpandableLayout
                 android:id="@+id/expandLAVklad"
 
+                android:layout_marginBottom="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -468,6 +469,7 @@
             <net.cachapa.expandablelayout.ExpandableLayout
                 android:id="@+id/expandLACard"
 
+                android:layout_marginBottom="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -498,6 +500,7 @@
             <net.cachapa.expandablelayout.ExpandableLayout
                 android:id="@+id/expandLACredit"
 
+                android:layout_marginBottom="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"

@@ -118,6 +118,17 @@ public class AdapterCards extends RecyclerView.Adapter<AdapterCards.CardItemVH> 
                 holder.cashB.setTextColor(ctx.getResources().getColor(R.color.header2));
             }
 
+        if(card.getDostavka()==1)
+        {
+            holder.dostavka.setText("возможна");
+            holder.dostavka.setTextColor(ctx.getResources().getColor(R.color.orange));
+        }
+        else
+            {
+                holder.dostavka.setText("нет");
+                holder.dostavka.setTextColor(ctx.getResources().getColor(R.color.header2));
+            }
+
         if(card.getRubLimit()!=0)
         {
             holder.rub.setImageDrawable(ctx.getResources().getDrawable(R.drawable.roubleyes));
@@ -213,7 +224,7 @@ public class AdapterCards extends RecyclerView.Adapter<AdapterCards.CardItemVH> 
 
     class CardItemVH extends RecyclerView.ViewHolder
     {
-        TextView name,bankname,limit,srok,stavka,cashB;
+        TextView name,bankname,limit,srok,stavka,cashB,dostavka;
         ImageView bankImg,rub,dol,euro;
         CardView cardCV;
 
@@ -226,6 +237,7 @@ public class AdapterCards extends RecyclerView.Adapter<AdapterCards.CardItemVH> 
             srok=(TextView)itemView.findViewById(R.id.cardSrok);
             stavka=(TextView)itemView.findViewById(R.id.cardStavka);
             cashB=(TextView)itemView.findViewById(R.id.cardCashBack);
+            dostavka=(TextView)itemView.findViewById(R.id.cardDostavka);
 
             bankImg=(ImageView) itemView.findViewById(R.id.cardBankImage);
             rub=(ImageView)itemView.findViewById(R.id.cardImgRub);

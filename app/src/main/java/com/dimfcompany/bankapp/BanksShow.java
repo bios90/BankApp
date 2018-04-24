@@ -154,18 +154,30 @@ public class BanksShow extends AppCompatActivity {
 
     void showCards()
     {
+        if(currentCards.size()==0)
+        {
+            finish();
+        }
         cardsAdapter=new AdapterCards(this,currentCards);
         recView.setAdapter(cardsAdapter);
     }
 
     void showVklads()
     {
+        if(currentVklads.size()==0)
+        {
+            finish();
+        }
         adapter=new AdapterVklad(currentVklads,this);
         recView.setAdapter(adapter);
     }
 
     void showCredits()
     {
+        if(currentCredits.size()==0)
+        {
+            finish();
+        }
         creditAdapter=new AdapterCredit(this,currentCredits);
         recView.setAdapter(creditAdapter);
     }

@@ -68,7 +68,7 @@ public class DetailsCredit extends AppCompatActivity
         paramShorokiy = new LinearLayout.LayoutParams(
                 0,
                 LinearLayout.LayoutParams.WRAP_CONTENT,
-                14.0f
+                20.0f
         );
 
         paramYzkiy = new LinearLayout.LayoutParams(
