@@ -4,10 +4,40 @@ public class ModelCredit
 {
     String name,bankName,logo;
     int id,bank_id,rubsymmacredit,rubsrokcredit,dolsymmacredit,dolsrokcredit,eurosymmacredit,eurosrokcredit,staj,podtverj;
-    double stavkarubcredit,stavkadolcredit,stavkaeurocredit;
+    double stavkarubcredit,stavkadolcredit,stavkaeurocredit,rubmax,dolmax,euromax;
     boolean refinans,obes,tolkopass;
 
     public ModelCredit() {
+    }
+
+    public double getRubmax()
+    {
+        return rubmax;
+    }
+
+    public void setRubmax(double rubmax)
+    {
+        this.rubmax = rubmax;
+    }
+
+    public double getDolmax()
+    {
+        return dolmax;
+    }
+
+    public void setDolmax(double dolmax)
+    {
+        this.dolmax = dolmax;
+    }
+
+    public double getEuromax()
+    {
+        return euromax;
+    }
+
+    public void setEuromax(double euromax)
+    {
+        this.euromax = euromax;
     }
 
     public String getName() {

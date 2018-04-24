@@ -13,14 +13,16 @@ import com.squareup.picasso.Picasso;
 
 public class DetailsCredit extends AppCompatActivity
 {
-    TextView creditName,creditBankName,rubStavka,rubSumma,rubSrok,dolStavka,dolSumma,dolSrok,refinans,obes,staj,tolkopass,
+    TextView creditName,creditBankName,rubStavka,rubSumma,rubSrok,dolStavka,dolSumma,euroStavka,euroSumma,euroSrok,dolSrok,refinans,obes,staj,tolkopass,
     podtverjName,ndfl,bankForm,other,noPodtverj;
 
-    LinearLayout rubLA,dolLA,bankLA;
+    LinearLayout rubLA,dolLA,euroLA,bankLA;
 
     ImageView logo;
 
     ModelCredit credit;
+
+    LinearLayout.LayoutParams paramShorokiy,paramYzkiy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,6 +44,9 @@ public class DetailsCredit extends AppCompatActivity
         dolSumma=(TextView)findViewById(R.id.creditInfoDolSumma);
         dolSrok=(TextView)findViewById(R.id.creditInfoDolSrok);
         refinans=(TextView)findViewById(R.id.creditInfoRefinans);
+        euroStavka=(TextView)findViewById(R.id.creditInfoEuroStavka);
+        euroSrok=(TextView)findViewById(R.id.creditInfoEuroSrok);
+        euroSumma=(TextView)findViewById(R.id.creditInfoEuroSumma);
         obes=(TextView)findViewById(R.id.creditInfoObes);
         staj=(TextView)findViewById(R.id.creditInfoStaj);
         tolkopass=(TextView)findViewById(R.id.creditInfoTolkoPass);
@@ -57,6 +62,21 @@ public class DetailsCredit extends AppCompatActivity
 
         rubLA=(LinearLayout)findViewById(R.id.creditRubLayout);
         dolLA=(LinearLayout)findViewById(R.id.creditDolLayout);
+        euroLA=(LinearLayout)findViewById(R.id.creditEuroLayout);
+
+
+        paramShorokiy = new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                14.0f
+        );
+
+        paramYzkiy = new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                6.0f
+        );
+
         //endregion
 
         credit=new ModelCredit();// BanksShow.currentCredits.get(num);
@@ -76,7 +96,21 @@ public class DetailsCredit extends AppCompatActivity
 
         if(credit.getStavkarubcredit()!=0.0)
         {
-            rubStavka.setText(String.valueOf(credit.getStavkarubcredit())+"%");
+            rubLA.setVisibility(View.VISIBLE);
+            if(credit.getRubmax()!=0.0 && credit.getRubmax()!=credit.getStavkarubcredit())
+            {
+                rubStavka.setLayoutParams(paramShorokiy);
+                rubStavka.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+
+                rubStavka.setText("от "+credit.getStavkarubcredit()+"% до "+credit.getRubmax()+"%");
+            }
+            else
+            {
+                rubStavka.setLayoutParams(paramYzkiy);
+                rubStavka.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+                rubStavka.setText(String.valueOf("от "+credit.getStavkarubcredit()) + "%");
+            }
             rubSumma.setText(summString(credit.getRubsymmacredit())+"₽");
             rubSrok.setText(srokString(credit.getRubsrokcredit()));
         }
@@ -87,9 +121,21 @@ public class DetailsCredit extends AppCompatActivity
 
         if(credit.getStavkadolcredit()!=0.0)
         {
+            if(credit.getDolmax()!=0.0 && credit.getDolmax()!=credit.getStavkadolcredit())
+            {
+                dolStavka.setLayoutParams(paramShorokiy);
+                dolStavka.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
 
+                dolStavka.setText("от "+credit.getStavkadolcredit()+"% до "+credit.getDolmax()+"%");
+            }
+            else
+            {
+               dolStavka.setLayoutParams(paramYzkiy);
+               dolStavka.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+               dolStavka.setText(String.valueOf("от "+credit.getStavkadolcredit()) + "%");
+            }
             dolLA.setVisibility(View.VISIBLE);
-            dolStavka.setText(String.valueOf(credit.getStavkadolcredit()+"%"));
             dolSumma.setText(summString(credit.getDolsymmacredit())+"$");
             dolSrok.setText(srokString(credit.getDolsrokcredit()));
         }
@@ -97,6 +143,31 @@ public class DetailsCredit extends AppCompatActivity
             {
                 dolLA.setVisibility(View.GONE);
             }
+
+        if(credit.getStavkaeurocredit()!=0.0)
+        {
+            if(credit.getEuromax()!=0.0 && credit.getEuromax()!=credit.getStavkaeurocredit())
+            {
+                euroStavka.setLayoutParams(paramShorokiy);
+                euroStavka.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+
+                euroStavka.setText("от "+credit.getStavkaeurocredit()+"% до "+credit.getEuromax()+"%");
+            }
+            else
+            {
+                euroStavka.setLayoutParams(paramYzkiy);
+                euroStavka.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+                euroStavka.setText(String.valueOf("от "+credit.getStavkaeurocredit()) + "%");
+            }
+            euroLA.setVisibility(View.VISIBLE);
+            euroSumma.setText(summString(credit.getEurosymmacredit())+"€");
+            euroSrok.setText(srokString(credit.getEurosrokcredit()));
+        }
+        else
+        {
+            euroLA.setVisibility(View.GONE);
+        }
 
         if(credit.isRefinans()==true)
         {

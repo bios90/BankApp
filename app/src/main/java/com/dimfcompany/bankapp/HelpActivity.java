@@ -33,7 +33,7 @@ public class HelpActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference ref;
 
-    EditText name,surName,phone,comment;
+    EditText name,surName,phone,comment,mail;
 
     Context ctx;
 
@@ -54,6 +54,7 @@ public class HelpActivity extends AppCompatActivity {
         surName=(EditText)findViewById(R.id.helpSurname);
         phone=(EditText)findViewById(R.id.helpPhone);
         comment=(EditText)findViewById(R.id.helpQuestion);
+        mail=(EditText)findViewById(R.id.helpMail);
 
         adapter=new ArrayAdapter<String>(HelpActivity.this,R.layout.spinner_item_dark,getResources().getStringArray(R.array.help));
         helpType.setAdapter(adapter);
@@ -74,27 +75,34 @@ public class HelpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                if(!TextUtils.isEmpty(name.getText().toString()) && !TextUtils.isEmpty(surName.getText().toString()) && !TextUtils.isEmpty(phone.getText().toString())) {
-                    firebaseDatabase = FirebaseDatabase.getInstance();
-                    ref = firebaseDatabase.getReference();
-                    DatabaseReference newHelp = ref.child("Help").push();
-                    newHelp.child("Name").setValue(name.getText().toString());
-                    newHelp.child("Surname").setValue(surName.getText().toString());
-                    newHelp.child("Phone").setValue(phone.getText().toString());
-                    newHelp.child("Comment").setValue(comment.getText().toString());
-                    newHelp.child("Type").setValue(choosedtype);
+                if(!TextUtils.isEmpty(name.getText().toString()) && !TextUtils.isEmpty(surName.getText().toString())) {
 
-                    Date currentTime = Calendar.getInstance().getTime();
-                    Log.e("Date!!", String.valueOf(currentTime));
-                    newHelp.child("Date").setValue(String.valueOf(currentTime));
+                    if(!TextUtils.isEmpty(mail.getText().toString())||!TextUtils.isEmpty(phone.getText().toString()))
+                    {
+                        firebaseDatabase = FirebaseDatabase.getInstance();
+                        ref = firebaseDatabase.getReference();
+                        DatabaseReference newHelp = ref.child("Help").push();
+                        newHelp.child("Name").setValue(name.getText().toString());
+                        newHelp.child("Surname").setValue(surName.getText().toString());
+                        newHelp.child("Phone").setValue(phone.getText().toString());
+                        newHelp.child("Comment").setValue(comment.getText().toString());
+                        newHelp.child("Type").setValue(choosedtype);
 
-                    BanksShow.newRequestsaved=99;
-                    finish();
+                        Date currentTime = Calendar.getInstance().getTime();
+                        Log.e("Date!!", String.valueOf(currentTime));
+                        newHelp.child("Date").setValue(String.valueOf(currentTime));
+
+                        BanksShow.newRequestsaved = 99;
+                        finish();
+                    }else
+                    {
+                        PageViewActivity.ShowToast(HelpActivity.this,"Заполните обязательные поля : Имя, Фамилия, Телефон или Email.");
+                    }
 
                 }
                 else
                     {
-                        PageViewActivity.ShowToast(HelpActivity.this,"Заполните обязательные поля : Имя, Фамилия, Телефон.");
+                        PageViewActivity.ShowToast(HelpActivity.this,"Заполните обязательные поля : Имя, Фамилия, Телефон или Email.");
                     }
         }
         });

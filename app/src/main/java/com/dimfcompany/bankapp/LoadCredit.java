@@ -85,6 +85,10 @@ public class LoadCredit
                         newCredit.setStaj(object.getInt("staj"));
                         newCredit.setPodtverj(object.getInt("podtverj"));
 
+                        newCredit.setRubmax(object.getDouble("rubmax"));
+                        newCredit.setDolmax(object.getDouble("dolmax"));
+                        newCredit.setEuromax(object.getDouble("euromax"));
+
                         credits.add(newCredit);
                         count++;
                     } catch (JSONException e)

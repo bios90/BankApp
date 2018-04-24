@@ -75,6 +75,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <View
+                android:visibility="gone"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/orange" />
+
+            <TextView
+                android:visibility="gone"
+                android:textAlignment="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:textColor="@color/blueozornoi"
+                android:fontFamily="@font/museosanscyrl_500"
+                android:text="Данные для связи"
+                android:textSize="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
             <EditText
                 android:id="@+id/helpPhone"
 
@@ -82,11 +102,57 @@
                 android:textSize="16dp"
                 android:inputType="phone"
                 android:textColor="@color/blueozornoi"
-                android:hint="Телефон..."
+                android:hint="Телефон*..."
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:textColor="@color/blueozornoi"
+                android:fontFamily="@font/museosanscyrl_500"
+                android:text="и/или"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/helpMail"
+
+                android:textColorHint="@color/myWhite"
+                android:textSize="16dp"
+                android:inputType="phone"
+                android:textColor="@color/blueozornoi"
+                android:hint="Email..."
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:textAlignment="textStart"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:textColor="@color/blueozornoi"
+                android:fontFamily="@font/museosanscyrl_500"
+                android:text="*Консультации по телефону предоставляются только для жителей Москвы и Московсокой Области."
+                android:textSize="11dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <View
+                android:visibility="gone"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/orange" />
 
             <TextView
                 android:textAlignment="center"
