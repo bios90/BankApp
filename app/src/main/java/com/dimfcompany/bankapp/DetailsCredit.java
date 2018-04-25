@@ -109,7 +109,7 @@ public class DetailsCredit extends AppCompatActivity
                 rubStavka.setLayoutParams(paramYzkiy);
                 rubStavka.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
-                rubStavka.setText(String.valueOf("от "+credit.getStavkarubcredit()) + "%");
+                rubStavka.setText(String.valueOf(credit.getStavkarubcredit()) + "%");
             }
             rubSumma.setText(summString(credit.getRubsymmacredit())+"₽");
             rubSrok.setText(srokString(credit.getRubsrokcredit()));
@@ -133,7 +133,7 @@ public class DetailsCredit extends AppCompatActivity
                dolStavka.setLayoutParams(paramYzkiy);
                dolStavka.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
-               dolStavka.setText(String.valueOf("от "+credit.getStavkadolcredit()) + "%");
+               dolStavka.setText(String.valueOf(credit.getStavkadolcredit()) + "%");
             }
             dolLA.setVisibility(View.VISIBLE);
             dolSumma.setText(summString(credit.getDolsymmacredit())+"$");
@@ -158,7 +158,7 @@ public class DetailsCredit extends AppCompatActivity
                 euroStavka.setLayoutParams(paramYzkiy);
                 euroStavka.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
-                euroStavka.setText(String.valueOf("от "+credit.getStavkaeurocredit()) + "%");
+                euroStavka.setText(String.valueOf(credit.getStavkaeurocredit()) + "%");
             }
             euroLA.setVisibility(View.VISIBLE);
             euroSumma.setText(summString(credit.getEurosymmacredit())+"€");
