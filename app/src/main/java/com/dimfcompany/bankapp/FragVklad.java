@@ -205,7 +205,10 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
     {
         super.onResume();
 
-        procentSeek.setProgress(procentSeek.getProgress());
+        if(procentSeek.getProgress()>=procentSeek.getMin() && procentSeek.getProgress()<=procentSeek.getMax())
+        {
+            procentSeek.setProgress(procentSeek.getProgress());
+        }
     }
 
     //region VoidDataFromDataBaseOld
@@ -338,6 +341,7 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
             @Override
             public void onClick(View v)
             {
+
                 getBanks.setEnabled(false);
                 String query = FormingQuery();
 
@@ -348,6 +352,7 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
                     {
                         final SpotsDialog sd = PageViewActivity.sd;
                         sd.show();
+                        getBanks.setEnabled(true);
                         vkladList=new ArrayList<>();
                         vkladList=LoadVklads.vkladList;
                         if(vkladList.size()>0)
@@ -389,7 +394,6 @@ public class FragVklad extends Fragment implements AdapterView.OnItemSelectedLis
                     }
                 };
                 LoadVklads.GetVklads(query,getContext(),finishedListener);
-                getBanks.setEnabled(true);
             }
         });
 

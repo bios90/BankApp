@@ -1,12 +1,7 @@
 package com.dimfcompany.bankapp;
 
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -16,12 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -254,27 +247,34 @@ public class FragCredCard extends Fragment
     public void onResume()
     {
         super.onResume();
-
-        credCardSrok.setProgress(credCardSrok.getProgress());
-        credCardLimit.setProgress(credCardLimit.getProgress());
+        if(credCardSrok.getProgress()>=credCardSrok.getMin() && credCardSrok.getProgress()<=credCardSrok.getMax())
+        {
+            credCardSrok.setProgress(credCardSrok.getProgress());
+        }
+        if(credCardLimit.getProgress()>=credCardLimit.getMin()&& credCardLimit.getProgress()<=credCardLimit.getMax())
+        {
+            credCardLimit.setProgress(credCardLimit.getProgress());
+        }
     }
 
     //region ShowButtonVoid
     public void showButton()
     {
-        Button show=(Button)getActivity().findViewById(R.id.showBanksButt);
+        final Button show=(Button)getActivity().findViewById(R.id.showBanksButt);
         show.setOnClickListener(null);
         show.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
+                show.setEnabled(false);
                 String query = FormingQuery();
                 RequestQueue.RequestFinishedListener finishedListener=new RequestQueue.RequestFinishedListener()
                 {
                     @Override
                     public void onRequestFinished(Request request)
                     {
+                        show.setEnabled(true);
                         final SpotsDialog sd = PageViewActivity.sd;
                         sd.show();
                         cardList=new ArrayList<>();

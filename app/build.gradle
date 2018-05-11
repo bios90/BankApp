@@ -22,21 +22,19 @@ android {
 }
 
 dependencies {
-
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-
     implementation 'com.google.android.gms:play-services-location:15.0.0'
     implementation 'com.google.android.gms:play-services-maps:15.0.0'
-
+    compile 'com.sun.mail:android-mail:1.5.5'
+    compile 'com.sun.mail:android-activation:1.5.5'
     compile 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
     compile 'com.github.turing-tech:MaterialScrollBar:12.+'
     compile 'com.github.d-max:spots-dialog:0.7@aar'
     compile 'com.android.support:appcompat-v7:26.+'
-    compile "com.android.support:exifinterface:26.1.0"
+    compile 'com.android.support:exifinterface:26.1.0'
     compile 'uk.co.chrisjenx:calligraphy:2.3.0'
     compile 'com.github.warkiz.widget:indicatorseekbar:1.2.9'
     compile 'com.xw.repo:bubbleseekbar:3.12-lite'
@@ -49,6 +47,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.picasso:picasso:2.71828'
     compile 'com.mcxiaoke.volley:library:1.0.19'
+//    implementation files('/Users/bios90/Downloads/activation.jar')
+//    implementation files('/Users/bios90/Downloads/additionnal.jar')
+//    implementation files('/Users/bios90/Downloads/mail.jar')
 }
 
 

@@ -1,10 +1,7 @@
 package com.dimfcompany.bankapp;
 
 
-import android.app.ActionBar;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -14,7 +11,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -22,7 +18,6 @@ import android.widget.CheckBox;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -305,9 +300,14 @@ public class FragCredit extends Fragment
     {
         super.onResume();
         Log.e("!!!!!!!!!!!!!","RESUMEDDDDDD");
-
-        creditSeek.setProgress(creditSeek.getProgress());
-        creditTimeSeek.setProgress(creditTimeSeek.getProgress());
+        if((creditSeek.getProgress())>=(creditSeek.getMin()) && creditSeek.getProgress()<=creditSeek.getMax())
+        {
+            creditSeek.setProgress(creditSeek.getProgress());
+        }
+        if(creditTimeSeek.getProgress()>=creditTimeSeek.getMin() && creditTimeSeek.getProgress()<=creditTimeSeek.getMax())
+        {
+            creditTimeSeek.setProgress(creditTimeSeek.getProgress());
+        }
     }
 
     //region ButtonLoadCredits
@@ -320,6 +320,7 @@ public class FragCredit extends Fragment
             @Override
             public void onClick(View v)
             {
+                showBanks.setEnabled(false);
                 final SpotsDialog sdstatic;
                 sdstatic=PageViewActivity.sd;
                 sdstatic.show();
@@ -330,7 +331,7 @@ public class FragCredit extends Fragment
                     @Override
                     public void onRequestFinished(Request request)
                     {
-
+                        showBanks.setEnabled(true);
                         creditList=new ArrayList<>();
                         creditList=LoadCredit.credits;
                         if(creditList.size()>0)
